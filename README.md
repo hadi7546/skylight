@@ -30,11 +30,11 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 | Open an app here | double-click the empty canvas or desktop, or right-click › Open Here…, or just start typing on the canvas; click a dash icon (a window already on the canvas is entered centred at 1:1; a new app opens in free space, or in the centre if Centre Launch is on, and goes in unless you turn that off in Settings) or drag one onto empty canvas (opens on that spot) | `Super`+`Return` |
 | Go into a window | click it (it grows to 1:1 around the click), or pinch out over it | |
 | Bring a window to the middle and go in | double-click it | `Return` over it |
-| Move a window | drag it: edges and centres line up with neighbours (pink guides), then it settles onto the grid. Drop onto another window (diagonal halves) or toward the view’s edges/corners to tile — DragnTile-style, on the canvas page. `Ctrl` moves freely, `Shift` takes its snapped group | |
+| Move a window | drag it: edges and centres line up with neighbours (pink guides), then it settles onto the grid. `Ctrl` moves freely, `Shift` takes its snapped group | |
 | Resize a window | drag its edge or corner on the canvas | |
 | Close | hover it: the close pill at its top right | |
 | Move & Resize | right-click › Move & Resize | halves `Super`+`Ctrl`+arrows (again: ⅔, then ⅓), quarters `Ctrl`+`Alt`+`U` `I` `J` `K`, thirds `D` `F` `G`, two-thirds `E` `R`, fill `Return`, centre `C` |
-| Find a window or open an app | type on the canvas (or click the search box): Settings › Canvas search bar chooses windows, apps, or both (default). Results split into **Windows** (enter centred) and **Apps** (open in free space, or the centre when Centre Launch is on). ↑ ↓ to pick, `Return` to go in / open (enters when dash-enter is on), `Ctrl`+`Return` always enters | |
+| Find a window or open an app | `Ctrl`+`Space` opens a spotlight in the middle of the view (typing on the canvas does the same). Settings › Canvas search chooses windows, apps, or both (default). Results split into **Windows** (enter centred) and **Apps** (open in free space, or the centre when Centre Launch is on). ↑ ↓ to pick, `Return` to go in / open, `Esc` dismisses | `Ctrl`+`Space` |
 | Switch windows | `Alt`+`Tab` (and `Alt`+`` ` `` within an app): opens the canvas if needed, then cycles on it — no GNOME switcher; release Alt to enter | |
 | Frames: named areas | right-click › New Frame (around the windows in view); drag its name to move it with its windows, its edge to resize it, double-click the name to go there; right-click the name to rename or delete | |
 | Strip mode: one row, a column per app | right-click › Strip Mode, the top bar menu, or Settings | `Ctrl`+`Alt`+`S`; `Super`+`,` `Super`+`.` the next column, `Super`+`Alt`+`↑` `↓` within one |
@@ -86,15 +86,14 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
 ### What's different
 
 - The canvas stands in for GNOME's overview: everything that showed the overview (`Super`, Activities,
-  the hot corner, three fingers up) shows the canvas, under the top bar, which stays in use, with a
-  search box at the top and GNOME's own dash at the bottom (borrowed from the overview while the canvas
-  shows, so its menus, pinning and dragging all work). Clicking a running app in it, Alt+Tab or a
+  the hot corner, three fingers up) shows   the canvas, under the top bar, which stays in use, with GNOME's own dash at the bottom (borrowed from the overview while the canvas
+  shows, so its menus, pinning and dragging all work) and a spotlight (`Ctrl`+`Space`, or just type) in the middle of the view. Clicking a running app in it, Alt+Tab or a
   notification goes into the window centred; picking a new app from the dash, vertical app grid, or
   search places it in free space and enters it by default (`dash-enter`; off leaves the new window
   where it landed; Centre Launch in the top bar or Settings pins the new window on the view centre);
   an app already on the canvas is entered centred. Dragging onto empty canvas places
-  without entering. The top search bar finds windows, launches apps,
-  or both (Settings › Canvas search bar, default both). The dash grid button opens Skylight’s vertical
+  without entering. Spotlight finds windows, launches apps,
+  or both (Settings › Canvas search, default both) without opening the top-bar menu. The dash grid button opens Skylight’s vertical
   scrolling app grid by default (after
   [gnome-vertical-app-grid](https://github.com/lublst/gnome-vertical-app-grid); turn off Settings ›
   Vertical app grid to use GNOME’s overview). One switch turns overview replace off.

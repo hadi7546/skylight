@@ -318,28 +318,3 @@ test('frames: around windows with padding, and which windows a frame carries', (
     // Its middle outside: left where it is.
     assert.ok(!G.insideFrame(f, {x: 900, y: 500, w: 200, h: 200}));
 });
-
-test('neighbourTileZone: DragnTile diagonals + centre keep-out', () => {
-    const r = {x: 0, y: 0, w: 200, h: 100};
-    assert.equal(G.neighbourTileZone(100, 50, r), null); // centre
-    assert.equal(G.neighbourTileZone(20, 50, r), 'left');
-    assert.equal(G.neighbourTileZone(180, 50, r), 'right');
-    assert.equal(G.neighbourTileZone(100, 10, r), 'top');
-    assert.equal(G.neighbourTileZone(100, 90, r), 'bottom');
-    assert.equal(G.neighbourTileZone(-1, 50, r), null);
-    assert.equal(G.oppositeHalf('left'), 'right');
-    assert.equal(G.oppositeHalf('top'), 'bottom');
-});
-
-test('edgeTilePreset: corners beat edges; outside the band is null', () => {
-    const area = {x: 0, y: 0, w: 1000, h: 800};
-    assert.equal(G.edgeTilePreset(10, 10, area, {band: 40}), 'top-left');
-    assert.equal(G.edgeTilePreset(990, 10, area, {band: 40}), 'top-right');
-    assert.equal(G.edgeTilePreset(10, 790, area, {band: 40}), 'bottom-left');
-    assert.equal(G.edgeTilePreset(990, 790, area, {band: 40}), 'bottom-right');
-    assert.equal(G.edgeTilePreset(10, 400, area, {band: 40}), 'left-half');
-    assert.equal(G.edgeTilePreset(990, 400, area, {band: 40}), 'right-half');
-    assert.equal(G.edgeTilePreset(500, 10, area, {band: 40}), 'top-half');
-    assert.equal(G.edgeTilePreset(500, 790, area, {band: 40}), 'bottom-half');
-    assert.equal(G.edgeTilePreset(500, 400, area, {band: 40}), null);
-});

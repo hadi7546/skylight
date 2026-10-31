@@ -33,13 +33,6 @@
   background-color: #ff529e;
 }
 
-/* Drag-to-tile destination (DragnTile-style tip) while a window is held. */
-.skylight-tile-preview {
-  background-color: rgba(53, 132, 228, 0.35);
-  border: 2px solid rgba(53, 132, 228, 0.85);
-  border-radius: 10px;
-}
-
 /* Open Here…: where the app will open, while the bar is up. */
 .skylight-mark {
   border: 2px solid rgba(255, 255, 255, 0.9);
@@ -176,19 +169,19 @@
   padding: 12px 12px 4px 12px;
 }
 
-/* Standing in for the overview: search at the top, the dash at the bottom. */
+/* Spotlight: a floating search in the view, not a top-bar menu. */
 .skylight-search,
 .skylight-search:hover {
-  background-color: rgba(28, 28, 31, 0.92);
+  background-color: rgba(28, 28, 31, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
+  border-radius: 22px;
   color: rgba(255, 255, 255, 0.92);
   caret-color: rgba(255, 255, 255, 0.92);
   selection-background-color: rgba(53, 132, 228, 0.6);
-  padding: 8px 20px;
-  margin-top: 16px;
-  width: 360px;
-  box-shadow: none;
+  font-size: 16px;
+  padding: 12px 20px;
+  width: 480px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
 }
 
 .skylight-dash-slot {
@@ -215,7 +208,8 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
   padding: 6px;
-  width: 360px;
+  margin-top: 8px;
+  width: 480px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
