@@ -175,9 +175,11 @@ export default class SkylightPreferences extends ExtensionPreferences {
         ], _('On the canvas. Automatic: Open Here grows from the spot; others rise like sunrise. GNOME’s Reduce Animation turns every effect into a fade')));
         windows.add(switchRow(settings, 'snapping', _('Alignment guides'),
             _('Edges and centres line up with neighbours while you drag; hold Ctrl to move freely')));
+        windows.add(switchRow(settings, 'drag-tile', _('Drag to tile'),
+            _('On the canvas, drop a window onto a neighbour (halves) or toward the view’s edges and corners (halves and quarters). Hold Ctrl to move freely')));
         windows.add(spinRow(settings, 'grid-size', _('Drop grid'), 0, 200, 10, 0,
             _('Let go and a window settles onto it; 0 turns it off')));
-        windows.add(spinRow(settings, 'tile-gap', _('Move &amp; Resize gap'), 0, 40, 2));
+        windows.add(spinRow(settings, 'tile-gap', _('Move &amp; Resize / drag-to-tile gap'), 0, 40, 2));
 
         const tidy = new Adw.PreferencesGroup({title: _('Tidy')});
         page.add(tidy);

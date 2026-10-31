@@ -30,7 +30,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 | Open an app here | double-click the empty canvas or desktop, or right-click › Open Here…, or just start typing on the canvas; click a dash icon (opens centred and goes in, unless you turn that off in Settings) or drag one onto empty canvas (opens on that spot) | `Super`+`Return` |
 | Go into a window | click it (it grows to 1:1 around the click), or pinch out over it | |
 | Bring a window to the middle and go in | double-click it | `Return` over it |
-| Move a window | drag it: edges and centres line up with neighbours (pink guides), then it settles onto the grid. `Ctrl` moves freely, `Shift` takes its snapped group | |
+| Move a window | drag it: edges and centres line up with neighbours (pink guides), then it settles onto the grid. Drop onto another window (diagonal halves) or toward the view’s edges/corners to tile — DragnTile-style, on the canvas page. `Ctrl` moves freely, `Shift` takes its snapped group | |
 | Resize a window | drag its edge or corner on the canvas | |
 | Close | hover it: the close pill at its top right | |
 | Move & Resize | right-click › Move & Resize | halves `Super`+`Ctrl`+arrows (again: ⅔, then ⅓), quarters `Ctrl`+`Alt`+`U` `I` `J` `K`, thirds `D` `F` `G`, two-thirds `E` `R`, fill `Return`, centre `C` |
