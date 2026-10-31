@@ -138,7 +138,7 @@ export default class SkylightPreferences extends ExtensionPreferences {
             ['windows', _('Find windows')],
             ['apps', _('App launcher')],
             ['both', _('Windows and apps')],
-        ], _('What typing in the top search finds. App launcher opens the pick centred (and enters it when “Enter apps opened from the canvas” is on)')));
+        ], _('Windows and apps are listed in separate sections. Choosing a window enters it; choosing an app opens it centred (and enters it when “Enter apps opened from the canvas” is on)')));
         canvas.add(switchRow(settings, 'canvas-app-grid', _('Vertical app grid on the canvas'),
             _('Dash grid button and a second three-finger swipe up open a fast vertical scrolling grid instead of GNOME’s laggy overview apps view (after gnome-vertical-app-grid). Off uses the overview')));
         canvas.add(switchRow(settings, 'dash-enter', _('Enter apps opened from the canvas'),
