@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="skylight">
+  <enum id="org.gnome.shell.extensions.skylight.background">
+    <value nick="wallpaper" value="0"/>
+    <value nick="grid" value="1"/>
+    <value nick="colour" value="2"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.skylight.launcher">
+    <value nick="gnome" value="0"/>
+    <value nick="skylight" value="1"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.skylight.tidy-style">
+    <value nick="grid" value="0"/>
+    <value nick="mosaic" value="1"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.skylight.tidy-order">
+    <value nick="position" value="0"/>
+    <value nick="recent" value="1"/>
+    <value nick="app" value="2"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.skylight.tidy-spacing">
+    <value nick="tight" value="0"/>
+    <value nick="normal" value="1"/>
+    <value nick="roomy" value="2"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.skylight" path="/org/gnome/shell/extensions/skylight/">
+
+    <!-- Background -->
+    <key name="background" enum="org.gnome.shell.extensions.skylight.background">
+      <default>'wallpaper'</default>
+      <summary>What sits behind the windows on the canvas</summary>
+      <description>wallpaper: your wallpaper, blurring and dimming as you zoom out. grid: a colour with a dot grid that pans and zooms with the canvas. colour: just the colour.</description>
+    </key>
+    <key name="blur-on-zoom" type="b">
+      <default>true</default>
+      <summary>Blur and dim the wallpaper as you zoom out</summary>
+    </key>
+    <key name="canvas-color" type="s">
+      <default>'#d4d4d4'</default>
+      <summary>Canvas colour (grid and colour backgrounds)</summary>
+    </key>
+    <key name="dot-color" type="s">
+      <default>'rgba(0,0,0,0.16)'</default>
+      <summary>Colour of the background dots</summary>
+    </key>
+    <key name="show-grid" type="b">
+      <default>true</default>
+      <summary>Draw dots on the grid background</summary>
+    </key>
+
+    <!-- Canvas -->
+    <key name="show-minimap" type="b">
+      <default>true</default>
+      <summary>Show the minimap</summary>
+    </key>
+    <key name="minimap-in-live-mode" type="b">
+      <default>true</default>
+      <summary>Show the minimap at 1:1, under your windows</summary>
+    </key>
+    <key name="show-indicator" type="b">
+      <default>true</default>
+      <summary>Show the top bar menu</summary>
+    </key>
+    <key name="remember-canvas" type="b">
+      <default>true</default>
+      <summary>Remember where windows are on the canvas between sessions</summary>
+    </key>
+    <key name="place-in-free-space" type="b">
+      <default>true</default>
+      <summary>Open new windows in free canvas space in view</summary>
+    </key>
+    <key name="follow-focus" type="b">
+      <default>true</default>
+      <summary>Glide to windows that get focus while partly off screen</summary>
+    </key>
+    <key name="scroll-speed" type="d">
+      <range min="0.25" max="4.0"/>
+      <default>1.0</default>
+      <summary>Two-finger panning speed</summary>
+    </key>
+    <key name="replace-overview" type="b">
+      <default>true</default>
+      <summary>The canvas in place of the overview</summary>
+      <description>Super, the Activities button, the hot corner and a three-finger swipe up show the canvas, with the dash and search; GNOME's overview stays for search and the app grid</description>
+    </key>
+    <key name="four-finger-pan" type="b">
+      <default>true</default>
+      <summary>Four-finger swipe pans the canvas from anywhere</summary>
+      <description>Three-finger swipes stay GNOME's (overview, dash, workspaces)</description>
+    </key>
+    <key name="pinch-fingers" type="i">
+      <range min="3" max="4"/>
+      <default>3</default>
+      <summary>Fingers needed to pinch-zoom from anywhere (two fingers work on the desktop and the canvas)</summary>
+    </key>
+
+    <!-- Windows -->
+    <key name="snapping" type="b">
+      <default>true</default>
+      <summary>Alignment guides while dragging (hold Ctrl to move freely)</summary>
+    </key>
+    <key name="grid-size" type="i">
+      <range min="0" max="200"/>
+      <default>40</default>
+      <summary>Drop grid, in pixels (0 turns it off)</summary>
+      <description>A window let go on the canvas settles onto this grid, and windows side by side line up this far apart.</description>
+    </key>
+    <key name="tile-gap" type="i">
+      <range min="0" max="40"/>
+      <default>8</default>
+      <summary>Gap for Move &amp; Resize, from the screen's edges and between windows</summary>
+    </key>
+    <key name="tidy-style" enum="org.gnome.shell.extensions.skylight.tidy-style">
+      <default>'grid'</default>
+      <summary>Tidy: a grid keeping sizes, or a tightly packed mosaic</summary>
+    </key>
+    <key name="tidy-order" enum="org.gnome.shell.extensions.skylight.tidy-order">
+      <default>'position'</default>
+      <summary>Tidy by where windows are, most recent first, or app</summary>
+    </key>
+    <key name="tidy-spacing" enum="org.gnome.shell.extensions.skylight.tidy-spacing">
+      <default>'normal'</default>
+      <summary>Tidy spacing</summary>
+    </key>
+    <key name="tidy-columns" type="i">
+      <range min="0" max="6"/>
+      <default>0</default>
+      <summary>Tidy columns (0 for automatic)</summary>
+    </key>
+
+    <!-- State (not shown in preferences) -->
+    <key name="canvas-state" type="s">
+      <default>''</default>
+      <summary>Where windows and cameras were (internal)</summary>
+    </key>
+    <key name="layouts" type="s">
+      <default>''</default>
+      <summary>Saved layouts (internal)</summary>
+    </key>
+    <key name="launcher" enum="org.gnome.shell.extensions.skylight.launcher">
+      <default>'gnome'</default>
+      <summary>What Open Here… searches with</summary>
+      <description>GNOME search (the overview, with files, settings and more) or Skylight's own app bar</description>
+    </key>
+    <key name="strip-mode" type="b">
+      <default>false</default>
+      <summary>Strip mode</summary>
+      <description>Every window on one horizontal strip, a column per app, the app used last on the left</description>
+    </key>
+    <key name="one-workspace" type="b">
+      <default>true</default>
+      <summary>One workspace</summary>
+      <description>Turn GNOME's workspaces off and gather every window onto one canvas</description>
+    </key>
+    <key name="saved-workspaces" type="s">
+      <default>''</default>
+      <summary>GNOME's workspace settings from before One workspace (internal)</summary>
+    </key>
+    <key name="frames" type="s">
+      <default>''</default>
+      <summary>Frames on each workspace's canvas (internal)</summary>
+    </key>
+    <key name="launcher-recents" type="as">
+      <default>[]</default>
+      <summary>Apps opened from Open Here…, most recent first (internal)</summary>
+    </key>
+
+    <!-- Keybindings -->
+    <key name="toggle-canvas" type="as">
+      <default><![CDATA[['<Super>z']]]></default>
+      <summary>See everything, and back into the window you came from</summary>
+    </key>
+    <key name="zoom-in" type="as">
+      <default><![CDATA[['<Super>equal']]]></default>
+      <summary>Zoom in</summary>
+    </key>
+    <key name="zoom-out" type="as">
+      <default><![CDATA[['<Super>minus']]]></default>
+      <summary>Zoom out</summary>
+    </key>
+    <key name="zoom-reset" type="as">
+      <default><![CDATA[['<Super>0']]]></default>
+      <summary>Zoom to 1:1</summary>
+    </key>
+    <key name="open-here" type="as">
+      <default><![CDATA[['<Super>Return']]]></default>
+      <summary>Open Here…: pick an app to open where you're looking</summary>
+    </key>
+    <key name="toggle-strip" type="as">
+      <default><![CDATA[['<Control><Alt>s']]]></default>
+      <summary>Strip mode on and off</summary>
+    </key>
+    <key name="strip-left" type="as">
+      <default><![CDATA[['<Super>comma']]]></default>
+      <summary>Strip mode: the column on the left</summary>
+    </key>
+    <key name="strip-right" type="as">
+      <default><![CDATA[['<Super>period']]]></default>
+      <summary>Strip mode: the column on the right</summary>
+    </key>
+    <key name="strip-up" type="as">
+      <default><![CDATA[['<Super><Alt>Up']]]></default>
+      <summary>Strip mode: the window above in the column</summary>
+    </key>
+    <key name="strip-down" type="as">
+      <default><![CDATA[['<Super><Alt>Down']]]></default>
+      <summary>Strip mode: the window below in the column</summary>
+    </key>
+    <key name="tidy-windows" type="as">
+      <default><![CDATA[['<Control><Alt>a']]]></default>
+      <summary>Tidy every window</summary>
+    </key>
+    <key name="tile-left-half" type="as">
+      <default><![CDATA[['<Super><Control>Left']]]></default>
+      <summary>Left half (again: two-thirds, then a third)</summary>
+    </key>
+    <key name="tile-right-half" type="as">
+      <default><![CDATA[['<Super><Control>Right']]]></default>
+      <summary>Right half (again: two-thirds, then a third)</summary>
+    </key>
+    <key name="tile-top-half" type="as">
+      <default><![CDATA[['<Super><Control>Up']]]></default>
+      <summary>Top half</summary>
+    </key>
+    <key name="tile-bottom-half" type="as">
+      <default><![CDATA[['<Super><Control>Down']]]></default>
+      <summary>Bottom half</summary>
+    </key>
+    <key name="tile-top-left" type="as">
+      <default><![CDATA[['<Control><Alt>u']]]></default>
+      <summary>Top left quarter</summary>
+    </key>
+    <key name="tile-top-right" type="as">
+      <default><![CDATA[['<Control><Alt>i']]]></default>
+      <summary>Top right quarter</summary>
+    </key>
+    <key name="tile-bottom-left" type="as">
+      <default><![CDATA[['<Control><Alt>j']]]></default>
+      <summary>Bottom left quarter</summary>
+    </key>
+    <key name="tile-bottom-right" type="as">
+      <default><![CDATA[['<Control><Alt>k']]]></default>
+      <summary>Bottom right quarter</summary>
+    </key>
+    <key name="tile-left-third" type="as">
+      <default><![CDATA[['<Control><Alt>d']]]></default>
+      <summary>Left third</summary>
+    </key>
+    <key name="tile-center-third" type="as">
+      <default><![CDATA[['<Control><Alt>f']]]></default>
+      <summary>Centre third (again: two-thirds)</summary>
+    </key>
+    <key name="tile-right-third" type="as">
+      <default><![CDATA[['<Control><Alt>g']]]></default>
+      <summary>Right third</summary>
+    </key>
+    <key name="tile-left-two-thirds" type="as">
+      <default><![CDATA[['<Control><Alt>e']]]></default>
+      <summary>Left two-thirds</summary>
+    </key>
+    <key name="tile-right-two-thirds" type="as">
+      <default><![CDATA[['<Control><Alt>r']]]></default>
+      <summary>Right two-thirds</summary>
+    </key>
+    <key name="tile-full" type="as">
+      <default><![CDATA[['<Control><Alt>Return']]]></default>
+      <summary>Fill the screen (not maximised: it stays a canvas window)</summary>
+    </key>
+    <key name="tile-center" type="as">
+      <default><![CDATA[['<Control><Alt>c']]]></default>
+      <summary>Centre, keeping the size</summary>
+    </key>
+  </schema>
+</schemalist>

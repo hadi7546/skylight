@@ -1,0 +1,246 @@
+/* Skylight. Colours follow Sunlight's Chrome.swift. */
+
+.skylight-label {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Hover controls at a window's top-right: minimise and close. */
+.skylight-pill {
+  background-color: rgba(28, 28, 31, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 2px;
+  spacing: 1px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.skylight-pill-button {
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+}
+
+.skylight-pill-icon {
+  icon-size: 12px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Alignment guides while dragging (Sunlight's pink). */
+.skylight-guide {
+  background-color: #ff529e;
+}
+
+/* Open Here…: where the app will open, while the bar is up. */
+.skylight-mark {
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+/* The ring rippling out from a window arriving on the canvas. */
+.skylight-ring {
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+}
+
+.skylight-zoom-label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-feature-settings: "tnum";
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  margin: 8px 12px;
+}
+
+.skylight-toast {
+  background-color: rgba(28, 28, 31, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 8px 16px;
+  margin-top: 16px;
+}
+
+.skylight-minimap {
+  background-color: rgba(28, 28, 31, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 10px 10px 4px 10px;
+  spacing: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Margins must come from CSS: St resets actor margins on every restyle. */
+.skylight-minimap-floating {
+  margin: 0 12px 12px 0;
+}
+
+.skylight-minimap-map {
+  border-radius: 6px;
+}
+
+.skylight-minimap-bar {
+  spacing: 2px;
+}
+
+.skylight-minimap-zoom {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 10px;
+  font-feature-settings: "tnum";
+  padding-left: 2px;
+}
+
+.skylight-minimap-button {
+  border-radius: 6px;
+  padding: 3px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.skylight-minimap-button:hover,
+.skylight-minimap-button:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.skylight-minimap-icon {
+  icon-size: 12px;
+}
+
+/* Open Here…: the bar (Sunlight's OpenHerePanel). */
+.skylight-launcher {
+  background-color: rgba(28, 28, 31, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding-bottom: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.skylight-launcher-entry,
+.skylight-launcher-entry:hover,
+.skylight-launcher-entry:focus {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.95);
+  caret-color: rgba(255, 255, 255, 0.95);
+  selection-background-color: rgba(255, 255, 255, 0.25);
+  font-size: 22px;
+  padding: 16px 20px;
+  min-height: 32px;
+}
+
+.skylight-launcher-entry .hint-text {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.skylight-launcher-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 8px 0 8px;
+}
+
+.skylight-launcher-row {
+  height: 44px;
+  padding: 0 12px;
+  spacing: 12px;
+  border-radius: 8px;
+}
+
+.skylight-launcher-row:selected {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.skylight-launcher-name {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.skylight-launcher-note {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 14px;
+}
+
+.skylight-launcher-empty {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 15px;
+  padding: 12px 12px 4px 12px;
+}
+
+/* Standing in for the overview: search at the top, the dash at the bottom. */
+.skylight-search,
+.skylight-search:hover {
+  background-color: rgba(28, 28, 31, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  color: rgba(255, 255, 255, 0.92);
+  caret-color: rgba(255, 255, 255, 0.92);
+  selection-background-color: rgba(53, 132, 228, 0.6);
+  padding: 8px 20px;
+  margin-top: 16px;
+  width: 360px;
+  box-shadow: none;
+}
+
+.skylight-dash-slot {
+  padding-bottom: 12px;
+}
+
+/* The canvas's search: the match Return goes into. */
+.skylight-match-ring {
+  border: 3px solid #3584e4;
+  border-radius: 10px;
+}
+
+.skylight-search StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.skylight-search:focus {
+  border: 1px solid #3584e4;
+}
+
+/* Frames: named areas of the canvas. */
+.skylight-frame {
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.skylight-frame:matched {
+  border-color: rgba(53, 132, 228, 0.7);
+}
+
+.skylight-frame:selected {
+  border: 3px solid #3584e4;
+  background-color: rgba(53, 132, 228, 0.08);
+}
+
+.skylight-frame-title {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  padding: 2px 4px;
+}
+
+.skylight-frame-title:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.skylight-frame-title-entry,
+.skylight-frame-title-entry:focus {
+  background-color: rgba(28, 28, 31, 0.95);
+  border: 1px solid #3584e4;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.95);
+  caret-color: rgba(255, 255, 255, 0.95);
+  selection-background-color: rgba(53, 132, 228, 0.6);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 2px 6px;
+  min-width: 160px;
+  box-shadow: none;
+}
