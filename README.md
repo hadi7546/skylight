@@ -26,7 +26,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 | Zoom | pinch (two fingers on the desktop or canvas, three anywhere) | `Super` + scroll, anywhere |
 | Pan | four-finger swipe anywhere, over windows too; two-finger scroll or drag on the empty desktop or canvas | arrows on the canvas |
 | See everything, and back in | three-finger swipe up (down to go back), four-finger tap, Activities, the hot corner | `Super`, `Super`+`Z` |
-| App grid | three-finger swipe up again, or the grid button in the canvas's dash | |
+| App grid | three-finger swipe up again, or the grid button in the canvas's dash: Skylight’s vertical scrolling grid by default (fast; Settings can use GNOME’s overview instead) | |
 | Open an app here | double-click the empty canvas or desktop, or right-click › Open Here…, or just start typing on the canvas; click a dash icon (opens centred and goes in, unless you turn that off in Settings) or drag one onto empty canvas (opens on that spot) | `Super`+`Return` |
 | Go into a window | click it (it grows to 1:1 around the click), or pinch in over it | |
 | Bring a window to the middle and go in | double-click it | `Return` over it |
@@ -88,9 +88,11 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
   notification goes into the window; clicking a not-yet-open app opens it centred and enters it by
   default (`dash-enter`; off keeps the window on the canvas); dragging onto empty canvas places
   without entering. The top search bar finds windows, launches apps, or both (Settings › Canvas
-  search bar, default both). GNOME's overview is left for system search and the app grid. One switch
-  in Settings turns overview replace off. The minimap pops in on the canvas only by default (turn on
-  “Minimap at 1:1” to keep the old live-mode minimap).
+  search bar, default both). The dash grid button opens Skylight’s vertical scrolling app grid by
+  default (after [gnome-vertical-app-grid](https://github.com/lublst/gnome-vertical-app-grid); turn
+  off Settings › Vertical app grid to use GNOME’s overview). One switch turns overview replace off.
+  The minimap pops in on the canvas only by default (turn on “Minimap at 1:1” for the live-mode
+  minimap).
 - Sideways three-finger swipes stay GNOME's (workspaces); four fingers are Skylight's:
   a swipe pans from anywhere, as Sunlight's four-finger drag does, and a tap shows everything. On GNOME 51,
   which takes swipes of three fingers or more, Skylight takes four-finger ones first (an event filter).

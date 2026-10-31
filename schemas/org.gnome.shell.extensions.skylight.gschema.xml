@@ -87,6 +87,11 @@
       <summary>What the canvas search bar finds</summary>
       <description>windows: find windows and frames (Return with none opens Open Here…). apps: an app launcher under the search bar. both: windows first, then apps (default).</description>
     </key>
+    <key name="canvas-app-grid" type="b">
+      <default>true</default>
+      <summary>Vertical app grid on the canvas</summary>
+      <description>The dash grid button and a second three-finger swipe up open Skylight’s vertical scrolling app grid instead of GNOME’s overview apps view (faster; after gnome-vertical-app-grid). Off uses the overview.</description>
+    </key>
     <key name="show-indicator" type="b">
       <default>true</default>
       <summary>Show the top bar menu</summary>
