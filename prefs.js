@@ -134,6 +134,11 @@ export default class SkylightPreferences extends ExtensionPreferences {
             ['gnome', _('GNOME search')],
             ['skylight', _('Skylight’s app bar')],
         ]));
+        canvas.add(choiceRow(settings, 'canvas-search', _('Canvas search bar'), [
+            ['windows', _('Find windows')],
+            ['apps', _('App launcher')],
+            ['both', _('Windows and apps')],
+        ], _('What typing in the top search finds. App launcher opens the pick in the middle of the view (and enters it when “Enter apps opened from the dash” is on)')));
         canvas.add(switchRow(settings, 'dash-enter', _('Enter apps opened from the dash'),
             _('On the canvas, a dash click opens the app in the middle of the view and goes into it. Off, the window stays on the canvas. Dragging onto the canvas always places without entering')));
         canvas.add(switchRow(settings, 'strip-mode', _('Strip mode'),

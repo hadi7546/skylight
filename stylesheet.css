@@ -202,6 +202,39 @@
   border: 1px solid #3584e4;
 }
 
+/* Canvas search as app launcher: results under the search entry. */
+.skylight-search-apps {
+  background-color: rgba(28, 28, 31, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 6px;
+  width: 360px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.skylight-search-app-row {
+  height: 36px;
+  padding: 0 10px;
+  spacing: 10px;
+  border-radius: 8px;
+}
+
+.skylight-search-app-row:selected,
+.skylight-search-app-row:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.skylight-search-app-name {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.skylight-search-app-note {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+}
+
 /* Frames: named areas of the canvas. */
 .skylight-frame {
   border: 2px solid rgba(255, 255, 255, 0.28);

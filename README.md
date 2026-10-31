@@ -34,7 +34,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 | Resize a window | drag its edge or corner on the canvas | |
 | Minimise / close | hover it: the pill at its top right | |
 | Move & Resize | right-click › Move & Resize | halves `Super`+`Ctrl`+arrows (again: ⅔, then ⅓), quarters `Ctrl`+`Alt`+`U` `I` `J` `K`, thirds `D` `F` `G`, two-thirds `E` `R`, fill `Return`, centre `C` |
-| Find a window or a frame | type on the canvas (or click the search box): matches stand out, ↑ ↓ to pick, `Return` to go in; with nothing found, `Return` searches apps | |
+| Find a window or open an app | type on the canvas (or click the search box): Settings › Canvas search bar chooses windows, apps, or both (default). ↑ ↓ to pick, `Return` to go in / open (centred; enters when dash-enter is on), `Ctrl`+`Return` always enters | |
 | Frames: named areas | right-click › New Frame (around the windows in view); drag its name to move it with its windows, its edge to resize it, double-click the name to go there; right-click the name to rename or delete | |
 | Strip mode: one row, a column per app | right-click › Strip Mode, the top bar menu, or Settings | `Ctrl`+`Alt`+`S`; `Super`+`,` `Super`+`.` the next column, `Super`+`Alt`+`↑` `↓` within one |
 | Tidy everything | right-click › Tidy (on the strip: sort it again) | `Ctrl`+`Alt`+`A` |
@@ -75,7 +75,7 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
 - Picking a window in the GNOME overview moves the camera before the overview closes, so it closes
   straight onto the window.
 - Minimised windows keep their place: they leave the canvas and show dashed in the minimap.
-- The minimap at 1:1 sits under your windows, so it shows wherever the desktop does.
+- The minimap at 1:1 can sit under your windows (off by default; Settings › Minimap at 1:1).
 - The canvas is remembered: after logging in again windows that reopen within two minutes go back to
   their spots. Layouts keep sizes too, and reopen apps that aren't running.
 
@@ -86,10 +86,11 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
   search box at the top and GNOME's own dash at the bottom (borrowed from the overview while the canvas
   shows, so its menus, pinning and dragging all work). Clicking a running app in it, Alt+Tab or a
   notification goes into the window; clicking a not-yet-open app opens it centred and enters it by
-  default (or stays on the canvas if you turn that off); dragging onto the canvas places without
-  entering. GNOME's overview is left for search and the app grid. One switch in Settings turns this
-  off. The minimap pops in on the canvas only by default (turn on “Minimap at 1:1” to keep the old
-  live-mode minimap).
+  default (`dash-enter`; off keeps the window on the canvas); dragging onto empty canvas places
+  without entering. The top search bar finds windows, launches apps, or both (Settings › Canvas
+  search bar, default both). GNOME's overview is left for system search and the app grid. One switch
+  in Settings turns overview replace off. The minimap pops in on the canvas only by default (turn on
+  “Minimap at 1:1” to keep the old live-mode minimap).
 - Sideways three-finger swipes stay GNOME's (workspaces); four fingers are Skylight's:
   a swipe pans from anywhere, as Sunlight's four-finger drag does, and a tap shows everything. On GNOME 51,
   which takes swipes of three fingers or more, Skylight takes four-finger ones first (an event filter).
