@@ -59,9 +59,10 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
   count too), `↑` `↓` to pick, `Return` to open the app's window on the spot you picked (a ring marks
   it), `Ctrl`+`Return` to open it and go in. Apps you open often come first. An app that is running and
   can't open another window brings its last one over instead. On the canvas, the borrowed dash does the
-  same placement: click opens in the middle of the view and, by default, goes into it at 1:1 (Settings ›
-  Canvas › Enter apps opened from the dash; a running app is always entered); drag an icon onto empty
-  canvas and it opens on that spot without entering. Windows open and close with an effect (Settings ›
+  same placement: click opens centred and, by default, goes into it at 1:1 (Settings › Canvas › Enter
+  apps opened from the canvas — also used by the vertical app grid and search; a running app is always
+  entered); drag an icon onto empty canvas and it opens on that spot without entering. Windows open and
+  close with an effect (Settings ›
   Windows › Opening and closing: Automatic, Sunrise, Unfold, Bloom, Dissolve or None).
 - New windows open in the middle of what you're looking at if that's free, otherwise in the nearest free
   spot beside the windows in the way; on the canvas they pop in with a ripple. At 1:1 the camera never
@@ -85,12 +86,13 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
   the hot corner, three fingers up) shows the canvas, under the top bar, which stays in use, with a
   search box at the top and GNOME's own dash at the bottom (borrowed from the overview while the canvas
   shows, so its menus, pinning and dragging all work). Clicking a running app in it, Alt+Tab or a
-  notification goes into the window; clicking a not-yet-open app opens it centred and enters it by
-  default (`dash-enter`; off keeps the window on the canvas); dragging onto empty canvas places
-  without entering. The top search bar finds windows, launches apps, or both (Settings › Canvas
-  search bar, default both). The dash grid button opens Skylight’s vertical scrolling app grid by
-  default (after [gnome-vertical-app-grid](https://github.com/lublst/gnome-vertical-app-grid); turn
-  off Settings › Vertical app grid to use GNOME’s overview). One switch turns overview replace off.
+  notification goes into the window; picking an app from the dash, vertical app grid, or search opens
+  it centred and enters it by default (`dash-enter`; off keeps the new window centred on the canvas);
+  dragging onto empty canvas places without entering. The top search bar finds windows, launches apps,
+  or both (Settings › Canvas search bar, default both). The dash grid button opens Skylight’s vertical
+  scrolling app grid by default (after
+  [gnome-vertical-app-grid](https://github.com/lublst/gnome-vertical-app-grid); turn off Settings ›
+  Vertical app grid to use GNOME’s overview). One switch turns overview replace off.
   The minimap pops in on the canvas only by default (turn on “Minimap at 1:1” for the live-mode
   minimap).
 - Sideways three-finger swipes stay GNOME's (workspaces); four fingers are Skylight's:
