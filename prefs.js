@@ -81,11 +81,11 @@ function entryRow(settings, key, title) {
     return row;
 }
 
-function choiceRow(settings, key, title, choices) {
+function choiceRow(settings, key, title, choices, subtitle = '') {
     const model = new Gtk.StringList();
     for (const [, label] of choices)
         model.append(label);
-    const row = new Adw.ComboRow({title, model});
+    const row = new Adw.ComboRow({title, subtitle, model});
     const sync = () => {
         const i = choices.findIndex(([value]) => value === settings.get_string(key));
         row.selected = Math.max(0, i);
@@ -140,7 +140,7 @@ export default class SkylightPreferences extends ExtensionPreferences {
             _('GNOME’s workspaces are turned off and every window is gathered onto one canvas, so the overview shows everything too. Turning it off brings your workspace settings back')));
         canvas.add(switchRow(settings, 'show-minimap', _('Minimap')));
         canvas.add(switchRow(settings, 'minimap-in-live-mode', _('Minimap at 1:1'),
-            _('Under your windows, wherever the desktop shows')));
+            _('Off by default: the minimap shows on the canvas only. On, it also sits under your windows at 1:1')));
         canvas.add(switchRow(settings, 'remember-canvas', _('Remember the canvas'),
             _('Windows go back to their spots after you log in again')));
         canvas.add(switchRow(settings, 'place-in-free-space', _('New windows in free space')));
@@ -156,6 +156,14 @@ export default class SkylightPreferences extends ExtensionPreferences {
 
         const windows = new Adw.PreferencesGroup({title: _('Windows')});
         page.add(windows);
+        windows.add(choiceRow(settings, 'window-effect', _('Opening and closing'), [
+            ['automatic', _('Automatic')],
+            ['sunrise', _('Sunrise')],
+            ['unfold', _('Unfold')],
+            ['bloom', _('Bloom')],
+            ['dissolve', _('Dissolve')],
+            ['none', _('None')],
+        ], _('On the canvas. Automatic: Open Here grows from the spot; others rise like sunrise. GNOME’s Reduce Animation turns every effect into a fade')));
         windows.add(switchRow(settings, 'snapping', _('Alignment guides'),
             _('Edges and centres line up with neighbours while you drag; hold Ctrl to move freely')));
         windows.add(spinRow(settings, 'grid-size', _('Drop grid'), 0, 200, 10, 0,

@@ -27,7 +27,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 | Pan | four-finger swipe anywhere, over windows too; two-finger scroll or drag on the empty desktop or canvas | arrows on the canvas |
 | See everything, and back in | three-finger swipe up (down to go back), four-finger tap, Activities, the hot corner | `Super`, `Super`+`Z` |
 | App grid | three-finger swipe up again, or the grid button in the canvas's dash | |
-| Open an app here | double-click the empty canvas or desktop, or right-click › Open Here…, or just start typing on the canvas | `Super`+`Return` |
+| Open an app here | double-click the empty canvas or desktop, or right-click › Open Here…, or just start typing on the canvas; click a dash icon (opens in the middle of the view) or drag one onto empty canvas (opens on that spot) | `Super`+`Return` |
 | Go into a window | click it (it grows to 1:1 around the click), or pinch in over it | |
 | Bring a window to the middle and go in | double-click it | `Return` over it |
 | Move a window | drag it: edges and centres line up with neighbours (pink guides), then it settles onto the grid. `Ctrl` moves freely, `Shift` takes its snapped group | |
@@ -58,7 +58,10 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
   own app bar instead (faster, with a ring on the spot): type to filter (`vsc` finds Visual Studio Code, keywords
   count too), `↑` `↓` to pick, `Return` to open the app's window on the spot you picked (a ring marks
   it), `Ctrl`+`Return` to open it and go in. Apps you open often come first. An app that is running and
-  can't open another window brings its last one over instead.
+  can't open another window brings its last one over instead. On the canvas, the borrowed dash does the
+  same placement: click opens in the middle of the view (a running app is entered instead); drag an icon
+  onto empty canvas and it opens on that spot. Windows open and close with an effect (Settings › Windows ›
+  Opening and closing: Automatic, Sunrise, Unfold, Bloom, Dissolve or None).
 - New windows open in the middle of what you're looking at if that's free, otherwise in the nearest free
   spot beside the windows in the way; on the canvas they pop in with a ripple. At 1:1 the camera never
   moves for a launch: with no free room fully on screen the window opens over the others, as in GNOME.
@@ -80,9 +83,11 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
 - The canvas stands in for GNOME's overview: everything that showed the overview (`Super`, Activities,
   the hot corner, three fingers up) shows the canvas, under the top bar, which stays in use, with a
   search box at the top and GNOME's own dash at the bottom (borrowed from the overview while the canvas
-  shows, so its menus, pinning and dragging all work). Clicking an app in it, Alt+Tab or a notification
-  goes into the window it activates. GNOME's overview is left
-  for search and the app grid. One switch in Settings turns this off.
+  shows, so its menus, pinning and dragging all work). Clicking a running app in it, Alt+Tab or a
+  notification goes into the window; clicking or dragging a not-yet-open app launches it onto the canvas
+  where you're looking (or where you drop it). GNOME's overview is left for search and the app grid. One
+  switch in Settings turns this off. The minimap pops in on the canvas only by default (turn on
+  “Minimap at 1:1” to keep the old live-mode minimap).
 - Sideways three-finger swipes stay GNOME's (workspaces); four fingers are Skylight's:
   a swipe pans from anywhere, as Sunlight's four-finger drag does, and a tap shows everything. On GNOME 51,
   which takes swipes of three fingers or more, Skylight takes four-finger ones first (an event filter).
