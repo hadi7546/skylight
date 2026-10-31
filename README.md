@@ -35,7 +35,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 | Minimise / close | hover it: the pill at its top right | |
 | Move & Resize | right-click › Move & Resize | halves `Super`+`Ctrl`+arrows (again: ⅔, then ⅓), quarters `Ctrl`+`Alt`+`U` `I` `J` `K`, thirds `D` `F` `G`, two-thirds `E` `R`, fill `Return`, centre `C` |
 | Find a window or open an app | type on the canvas (or click the search box): Settings › Canvas search bar chooses windows, apps, or both (default). Results split into **Windows** (enter) and **Apps** (open). ↑ ↓ to pick, `Return` to go in / open (centred; enters when dash-enter is on), `Ctrl`+`Return` always enters | |
-| Switch windows on the canvas | `Alt`+`Tab` (and `Alt`+`` ` `` within an app) cycle on the canvas — no GNOME switcher; release Alt to enter | |
+| Switch windows | `Alt`+`Tab` (and `Alt`+`` ` `` within an app): opens the canvas if needed, then cycles on it — no GNOME switcher; release Alt to enter | |
 | Frames: named areas | right-click › New Frame (around the windows in view); drag its name to move it with its windows, its edge to resize it, double-click the name to go there; right-click the name to rename or delete | |
 | Strip mode: one row, a column per app | right-click › Strip Mode, the top bar menu, or Settings | `Ctrl`+`Alt`+`S`; `Super`+`,` `Super`+`.` the next column, `Super`+`Alt`+`↑` `↓` within one |
 | Tidy everything | right-click › Tidy (on the strip: sort it again) | `Ctrl`+`Alt`+`A` |
