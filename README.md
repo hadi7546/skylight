@@ -43,7 +43,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 | Save / restore a layout | top bar menu, right-click | `Ctrl`+`S` / `Ctrl`+`1`–`9` on the canvas |
 | Minimap | click to look there, drag the outline to pan, Fit and 1:1 buttons; a dashed outline is a minimised window: click it to bring it back and go in | |
 
-Everything else is in the sun icon in the top bar, and in Settings (`gnome-extensions prefs skylight@hazard7546`).
+Everything else is in the sun icon in the top bar, and in Settings (`gnome-extensions prefs skylight@hadi7546`).
 
 ### What's the same as Sunlight
 
@@ -106,15 +106,15 @@ also wants the uuid's namespace to be a domain or account you control (for examp
 
 Experimental builds are on the [Releases](https://github.com/hadi7546/skylight/releases) page: **experimental**
 is always the newest build of `main`, and tagged versions (`vX.Y.Z`) are pre-releases too. Download
-`skylight@hazard7546.shell-extension.zip`, then `gnome-extensions install --force` it, log out and back in,
-and `gnome-extensions enable skylight@hazard7546`. Or from the source:
+`skylight@hadi7546.shell-extension.zip`, then `gnome-extensions install --force` it, log out and back in,
+and `gnome-extensions enable skylight@hadi7546`. Or from the source:
 
 ```sh
 make install          # copies to ~/.local/share/gnome-shell/extensions
 ```
 
-Log out and back in, then `gnome-extensions enable skylight@hazard7546`. `make pack` builds
-`skylight@hazard7546.shell-extension.zip` for `gnome-extensions install` (`make dist` builds the same zip
+Log out and back in, then `gnome-extensions enable skylight@hadi7546`. `make pack` builds
+`skylight@hadi7546.shell-extension.zip` for `gnome-extensions install` (`make dist` builds the same zip
 without GNOME Shell installed).
 
 ### CI and releases

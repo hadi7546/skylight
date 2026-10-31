@@ -1,5 +1,5 @@
 {
-  "uuid": "skylight@hazard7546",
+  "uuid": "skylight@hadi7546",
   "name": "Skylight",
   "description": "An infinite canvas window manager, after Sunlight for macOS. Every window on one endless canvas at its real size; your screen is a camera. Pinch or Super+scroll to zoom out and see everything, pan with two fingers on the desktop, click a window to step into it at 1:1. Drag windows with alignment guides and a drop grid, resize them from their edges, tile them with Move & Resize keys, tidy everything, save and restore layouts.\n\nAt 1:1 your windows are completely normal and interactive.",
   "shell-version": [

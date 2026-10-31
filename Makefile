@@ -1,4 +1,4 @@
-UUID := skylight@hazard7546
+UUID := skylight@hadi7546
 DEST := $(HOME)/.local/share/gnome-shell/extensions/$(UUID)
 SOURCES := metadata.json extension.js prefs.js stylesheet.css lib schemas
 ZIP := $(UUID).shell-extension.zip
