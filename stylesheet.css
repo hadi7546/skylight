@@ -236,6 +236,11 @@
 }
 
 /* Vertical app grid on the canvas (after gnome-vertical-app-grid). */
+/* Dim scrim: never leave a transparent full-stage reactive cover. */
+.skylight-app-grid {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .skylight-app-grid-card {
   background-color: rgba(28, 28, 31, 0.97);
   border: 1px solid rgba(255, 255, 255, 0.1);
