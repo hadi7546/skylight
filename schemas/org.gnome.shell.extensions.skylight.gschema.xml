@@ -89,8 +89,8 @@
     </key>
     <key name="canvas-search" enum="org.gnome.shell.extensions.skylight.canvas-search">
       <default>'both'</default>
-      <summary>What the canvas search bar finds</summary>
-      <description>windows: find windows and frames (Return with none opens Open Here…). apps: an app launcher under the search bar. both: windows first, then apps (default).</description>
+      <summary>What canvas search finds</summary>
+      <description>windows: find windows and frames (Return with none opens Open Here…). apps: an app launcher under the spotlight. both: windows first, then apps (default).</description>
     </key>
     <key name="canvas-app-grid" type="b">
       <default>true</default>
@@ -121,7 +121,7 @@
     <key name="replace-overview" type="b">
       <default>true</default>
       <summary>The canvas in place of the overview</summary>
-      <description>Super, the Activities button, the hot corner and a three-finger swipe up show the canvas, with the dash and search; GNOME's overview stays for search and the app grid</description>
+      <description>Super, the Activities button, the hot corner and a three-finger swipe up show the canvas, with the dash. Search is the spotlight on the canvas. The dash grid button opens Skylight's app grid.</description>
     </key>
     <key name="four-finger-pan" type="b">
       <default>true</default>
@@ -139,11 +139,6 @@
       <default>true</default>
       <summary>Alignment guides while dragging (hold Ctrl to move freely)</summary>
     </key>
-    <key name="drag-tile" type="b">
-      <default>true</default>
-      <summary>Drag-to-tile on the canvas</summary>
-      <description>Drop a window on a neighbour (diagonal halves) or toward the view's edges/corners to snap into Move &amp; Resize slots. Hold Ctrl to move freely.</description>
-    </key>
     <key name="grid-size" type="i">
       <range min="0" max="200"/>
       <default>40</default>
@@ -153,7 +148,7 @@
     <key name="tile-gap" type="i">
       <range min="0" max="40"/>
       <default>8</default>
-      <summary>Gap for Move &amp; Resize and drag-to-tile, from the page's edges and between windows</summary>
+      <summary>Gap for Move &amp; Resize, from the page's edges and between windows</summary>
     </key>
     <key name="tidy-style" enum="org.gnome.shell.extensions.skylight.tidy-style">
       <default>'grid'</default>
@@ -230,6 +225,11 @@
     <key name="open-here" type="as">
       <default><![CDATA[['<Super>Return']]]></default>
       <summary>Open Here…: pick an app to open where you're looking</summary>
+    </key>
+    <key name="spotlight" type="as">
+      <default><![CDATA[['<Control>space']]]></default>
+      <summary>Spotlight: search windows and apps on the canvas</summary>
+      <description>Opens a search overlay in the middle of the current view. Does not open the top-bar menu. Esc dismisses, Return activates.</description>
     </key>
     <key name="toggle-strip" type="as">
       <default><![CDATA[['<Control><Alt>s']]]></default>

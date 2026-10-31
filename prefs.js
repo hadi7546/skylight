@@ -11,6 +11,7 @@ const shortcuts = () => [
     ['zoom-in', _('Zoom in')],
     ['zoom-reset', _('Zoom to 1:1')],
     ['open-here', _('Open an app where you’re looking')],
+    ['spotlight', _('Spotlight: search windows and apps on the canvas')],
     ['tidy-windows', _('Tidy every window')],
     ['toggle-strip', _('Strip mode on and off')],
     ['strip-left', _('Strip mode: the column on the left')],
@@ -130,11 +131,11 @@ export default class SkylightPreferences extends ExtensionPreferences {
             ['gnome', _('GNOME search')],
             ['skylight', _('Skylight’s app bar')],
         ]));
-        canvas.add(choiceRow(settings, 'canvas-search', _('Canvas search bar'), [
+        canvas.add(choiceRow(settings, 'canvas-search', _('Canvas search'), [
             ['windows', _('Find windows')],
             ['apps', _('App launcher')],
             ['both', _('Windows and apps')],
-        ], _('Windows and apps are listed in separate sections. Choosing a window enters it centred. Choosing an app opens it in free space (or in the centre when “Open new apps in the centre” is on) and enters it when “Enter apps opened from the canvas” is on')));
+        ], _('Ctrl+Space opens a spotlight in the middle of the view (type on the canvas does the same). Windows and apps are separate sections. A window is entered centred. An app opens in free space (or in the centre when “Open new apps in the centre” is on) and is entered when “Enter apps opened from the canvas” is on')));
         canvas.add(switchRow(settings, 'canvas-app-grid', _('Vertical app grid on the canvas'),
             _('Dash grid button and a second three-finger swipe up open a fast vertical scrolling grid instead of GNOME’s laggy overview apps view (after gnome-vertical-app-grid). Off uses the overview')));
         canvas.add(switchRow(settings, 'dash-enter', _('Enter apps opened from the canvas'),
@@ -155,7 +156,7 @@ export default class SkylightPreferences extends ExtensionPreferences {
             _('Glide to a window that gets focus while partly off screen')));
         canvas.add(spinRow(settings, 'scroll-speed', _('Panning speed'), 0.25, 4, 0.25, 2));
         canvas.add(switchRow(settings, 'replace-overview', _('The canvas in place of the overview'),
-            _('Super, Activities, the hot corner and a three-finger swipe up show the canvas, with the dash and search. GNOME’s overview stays for search and the app grid')));
+            _('Super, Activities, the hot corner and a three-finger swipe up show the canvas, with the dash. Search is the spotlight on the canvas')));
         canvas.add(switchRow(settings, 'four-finger-pan', _('Four-finger swipe pans the canvas'),
             _('From anywhere, over windows too. Three-finger swipes stay GNOME’s: the overview and the dash')));
         canvas.add(spinRow(settings, 'pinch-fingers', _('Fingers to pinch from anywhere'), 3, 4, 1));
@@ -173,11 +174,9 @@ export default class SkylightPreferences extends ExtensionPreferences {
         ], _('On the canvas. Automatic: Open Here grows from the spot; others rise like sunrise. GNOME’s Reduce Animation turns every effect into a fade')));
         windows.add(switchRow(settings, 'snapping', _('Alignment guides'),
             _('Edges and centres line up with neighbours while you drag; hold Ctrl to move freely')));
-        windows.add(switchRow(settings, 'drag-tile', _('Drag to tile'),
-            _('On the canvas, drop a window onto a neighbour (halves) or toward the view’s edges and corners (halves and quarters). Hold Ctrl to move freely')));
         windows.add(spinRow(settings, 'grid-size', _('Drop grid'), 0, 200, 10, 0,
             _('Let go and a window settles onto it; 0 turns it off')));
-        windows.add(spinRow(settings, 'tile-gap', _('Move &amp; Resize / drag-to-tile gap'), 0, 40, 2));
+        windows.add(spinRow(settings, 'tile-gap', _('Move &amp; Resize gap'), 0, 40, 2));
 
         const tidy = new Adw.PreferencesGroup({title: _('Tidy')});
         page.add(tidy);
