@@ -33,6 +33,13 @@
   background-color: #ff529e;
 }
 
+/* Drag-to-tile destination (DragnTile-style tip) while a window is held. */
+.skylight-tile-preview {
+  background-color: rgba(53, 132, 228, 0.35);
+  border: 2px solid rgba(53, 132, 228, 0.85);
+  border-radius: 10px;
+}
+
 /* Open Here…: where the app will open, while the bar is up. */
 .skylight-mark {
   border: 2px solid rgba(255, 255, 255, 0.9);
