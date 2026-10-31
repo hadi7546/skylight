@@ -46,7 +46,11 @@ class Indicator extends PanelMenu.Button {
         add(_('Open App…'), () => controller.openHere());
         add(_('See Everything'), () => controller.fitAll());
         add(_('Tidy'), () => controller.tidy());
-        for (const [key, label] of [['strip-mode', _('Strip Mode')], ['one-workspace', _('One Workspace')]]) {
+        for (const [key, label] of [
+            ['strip-mode', _('Strip Mode')],
+            ['one-workspace', _('One Workspace')],
+            ['centre-launch', _('Centre Launch')],
+        ]) {
             const item = new PopupMenu.PopupSwitchMenuItem(label, this._settings.get_boolean(key));
             item.connect('toggled', (i, state) => this._settings.set_boolean(key, state));
             this.menu.addMenuItem(item);
