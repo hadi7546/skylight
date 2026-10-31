@@ -134,6 +134,11 @@
       <default>true</default>
       <summary>Alignment guides while dragging (hold Ctrl to move freely)</summary>
     </key>
+    <key name="drag-tile" type="b">
+      <default>true</default>
+      <summary>Drag-to-tile on the canvas</summary>
+      <description>Drop a window on a neighbour (diagonal halves) or toward the view's edges/corners to snap into Move &amp; Resize slots. Hold Ctrl to move freely.</description>
+    </key>
     <key name="grid-size" type="i">
       <range min="0" max="200"/>
       <default>40</default>
@@ -143,7 +148,7 @@
     <key name="tile-gap" type="i">
       <range min="0" max="40"/>
       <default>8</default>
-      <summary>Gap for Move &amp; Resize, from the screen's edges and between windows</summary>
+      <summary>Gap for Move &amp; Resize and drag-to-tile, from the page's edges and between windows</summary>
     </key>
     <key name="tidy-style" enum="org.gnome.shell.extensions.skylight.tidy-style">
       <default>'grid'</default>
