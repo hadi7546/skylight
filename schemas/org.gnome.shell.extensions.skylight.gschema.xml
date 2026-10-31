@@ -72,6 +72,11 @@
       <summary>How windows open and close on the canvas</summary>
       <description>Automatic picks per window (Open Here grows from the spot, others sunrise). Reduce Animation in GNOME Settings makes every effect a fade.</description>
     </key>
+    <key name="dash-enter" type="b">
+      <default>true</default>
+      <summary>Enter apps opened from the dash</summary>
+      <description>On the canvas, clicking a dash icon opens the app in the middle of the view and goes into it at 1:1. Off, the window stays on the canvas. Dragging onto the canvas always places without entering. Running apps are always entered.</description>
+    </key>
     <key name="show-indicator" type="b">
       <default>true</default>
       <summary>Show the top bar menu</summary>

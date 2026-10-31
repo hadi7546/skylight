@@ -134,6 +134,8 @@ export default class SkylightPreferences extends ExtensionPreferences {
             ['gnome', _('GNOME search')],
             ['skylight', _('Skylight’s app bar')],
         ]));
+        canvas.add(switchRow(settings, 'dash-enter', _('Enter apps opened from the dash'),
+            _('On the canvas, a dash click opens the app in the middle of the view and goes into it. Off, the window stays on the canvas. Dragging onto the canvas always places without entering')));
         canvas.add(switchRow(settings, 'strip-mode', _('Strip mode'),
             _('Every window on one horizontal strip, a column per app, the app used last on the left. Off again, every window goes back')));
         canvas.add(switchRow(settings, 'one-workspace', _('One workspace'),
