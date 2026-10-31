@@ -1,5 +1,7 @@
 # Skylight
 
+[![Test, build and release](https://github.com/hadi7546/skylight/actions/workflows/ci.yml/badge.svg)](https://github.com/hadi7546/skylight/actions/workflows/ci.yml)
+
 [Sunlight](https://github.com/spacefarm-digital/sunlight) for GNOME: every window on one infinite
 canvas. Zoom out to see all of it. Click a window and you're in it, for real, at 1:1.
 
@@ -115,12 +117,26 @@ also wants the uuid's namespace to be a domain or account you control (for examp
 
 ## Install
 
+Experimental builds are on the [Releases](https://github.com/hadi7546/skylight/releases) page: **experimental**
+is always the newest build of `main`, and tagged versions (`vX.Y.Z`) are pre-releases too. Download
+`skylight@hazard7546.shell-extension.zip`, then `gnome-extensions install --force` it, log out and back in,
+and `gnome-extensions enable skylight@hazard7546`. Or from the source:
+
 ```sh
 make install          # copies to ~/.local/share/gnome-shell/extensions
 ```
 
 Log out and back in, then `gnome-extensions enable skylight@hazard7546`. `make pack` builds
-`skylight@hazard7546.shell-extension.zip` for `gnome-extensions install`.
+`skylight@hazard7546.shell-extension.zip` for `gnome-extensions install` (`make dist` builds the same zip
+without GNOME Shell installed).
+
+### CI and releases
+
+`.github/workflows/ci.yml` runs on every push and pull request: `make test`, `make lint`, the settings
+schema and `metadata.json` checks, then `make dist`, kept as a build artifact. A push to `main` replaces
+the rolling **experimental** pre-release; pushing a tag `vX.Y.Z` makes a pre-release of that version, with
+the version in the zip's `metadata.json`. The GNOME Shell end-to-end tests aren't in CI yet: they need a
+headless GNOME Shell 50 or 51.
 
 Supports GNOME Shell 50 and 51, on Wayland. Tested end to end on 51.1 (Arch Linux).
 
