@@ -138,11 +138,13 @@ export default class SkylightPreferences extends ExtensionPreferences {
             ['windows', _('Find windows')],
             ['apps', _('App launcher')],
             ['both', _('Windows and apps')],
-        ], _('Windows and apps are listed in separate sections. Choosing a window enters it; choosing an app opens it centred (and enters it when “Enter apps opened from the canvas” is on)')));
+        ], _('Windows and apps are listed in separate sections. Choosing a window enters it centred. Choosing an app opens it in free space (or in the centre when “Open new apps in the centre” is on) and enters it when “Enter apps opened from the canvas” is on')));
         canvas.add(switchRow(settings, 'canvas-app-grid', _('Vertical app grid on the canvas'),
             _('Dash grid button and a second three-finger swipe up open a fast vertical scrolling grid instead of GNOME’s laggy overview apps view (after gnome-vertical-app-grid). Off uses the overview')));
         canvas.add(switchRow(settings, 'dash-enter', _('Enter apps opened from the canvas'),
-            _('Dash, app grid, or search: open the app centred in the view and go into it at 1:1. Off, the new window stays centred on the canvas. Running apps are always entered. Dragging onto the canvas always places without entering')));
+            _('Dash, app grid, or search: go into the new window at 1:1. Off, it stays where it landed. An app already on the canvas is always entered centred. Dragging onto the canvas always places without entering')));
+        canvas.add(switchRow(settings, 'centre-launch', _('Open new apps in the centre'),
+            _('Off: a new app from the dash, app grid, or search opens in free space, beside its neighbours when the middle is taken. On: that launch is pinned on the centre of the view. An app already on the canvas is still entered centred')));
         canvas.add(switchRow(settings, 'strip-mode', _('Strip mode'),
             _('Every window on one horizontal strip, a column per app, the app used last on the left. Off again, every window goes back')));
         canvas.add(switchRow(settings, 'one-workspace', _('One workspace'),
