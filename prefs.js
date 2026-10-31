@@ -81,11 +81,11 @@ function entryRow(settings, key, title) {
     return row;
 }
 
-function choiceRow(settings, key, title, choices) {
+function choiceRow(settings, key, title, choices, subtitle = '') {
     const model = new Gtk.StringList();
     for (const [, label] of choices)
         model.append(label);
-    const row = new Adw.ComboRow({title, model});
+    const row = new Adw.ComboRow({title, subtitle, model});
     const sync = () => {
         const i = choices.findIndex(([value]) => value === settings.get_string(key));
         row.selected = Math.max(0, i);
@@ -134,13 +134,22 @@ export default class SkylightPreferences extends ExtensionPreferences {
             ['gnome', _('GNOME search')],
             ['skylight', _('Skylight’s app bar')],
         ]));
+        canvas.add(choiceRow(settings, 'canvas-search', _('Canvas search bar'), [
+            ['windows', _('Find windows')],
+            ['apps', _('App launcher')],
+            ['both', _('Windows and apps')],
+        ], _('What typing in the top search finds. App launcher opens the pick in the middle of the view (and enters it when “Enter apps opened from the dash” is on)')));
+        canvas.add(switchRow(settings, 'canvas-app-grid', _('Vertical app grid on the canvas'),
+            _('Dash grid button and a second three-finger swipe up open a fast vertical scrolling grid instead of GNOME’s laggy overview apps view (after gnome-vertical-app-grid). Off uses the overview')));
+        canvas.add(switchRow(settings, 'dash-enter', _('Enter apps opened from the dash'),
+            _('On the canvas, a dash click opens the app in the middle of the view and goes into it. Off, the window stays on the canvas. Dragging onto the canvas always places without entering')));
         canvas.add(switchRow(settings, 'strip-mode', _('Strip mode'),
             _('Every window on one horizontal strip, a column per app, the app used last on the left. Off again, every window goes back')));
         canvas.add(switchRow(settings, 'one-workspace', _('One workspace'),
             _('GNOME’s workspaces are turned off and every window is gathered onto one canvas, so the overview shows everything too. Turning it off brings your workspace settings back')));
         canvas.add(switchRow(settings, 'show-minimap', _('Minimap')));
         canvas.add(switchRow(settings, 'minimap-in-live-mode', _('Minimap at 1:1'),
-            _('Under your windows, wherever the desktop shows')));
+            _('Off by default: the minimap shows on the canvas only. On, it also sits under your windows at 1:1')));
         canvas.add(switchRow(settings, 'remember-canvas', _('Remember the canvas'),
             _('Windows go back to their spots after you log in again')));
         canvas.add(switchRow(settings, 'place-in-free-space', _('New windows in free space')));
@@ -156,6 +165,14 @@ export default class SkylightPreferences extends ExtensionPreferences {
 
         const windows = new Adw.PreferencesGroup({title: _('Windows')});
         page.add(windows);
+        windows.add(choiceRow(settings, 'window-effect', _('Opening and closing'), [
+            ['automatic', _('Automatic')],
+            ['sunrise', _('Sunrise')],
+            ['unfold', _('Unfold')],
+            ['bloom', _('Bloom')],
+            ['dissolve', _('Dissolve')],
+            ['none', _('None')],
+        ], _('On the canvas. Automatic: Open Here grows from the spot; others rise like sunrise. GNOME’s Reduce Animation turns every effect into a fade')));
         windows.add(switchRow(settings, 'snapping', _('Alignment guides'),
             _('Edges and centres line up with neighbours while you drag; hold Ctrl to move freely')));
         windows.add(spinRow(settings, 'grid-size', _('Drop grid'), 0, 200, 10, 0,

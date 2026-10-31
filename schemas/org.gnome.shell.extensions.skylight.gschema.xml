@@ -9,6 +9,11 @@
     <value nick="gnome" value="0"/>
     <value nick="skylight" value="1"/>
   </enum>
+  <enum id="org.gnome.shell.extensions.skylight.canvas-search">
+    <value nick="windows" value="0"/>
+    <value nick="apps" value="1"/>
+    <value nick="both" value="2"/>
+  </enum>
   <enum id="org.gnome.shell.extensions.skylight.tidy-style">
     <value nick="grid" value="0"/>
     <value nick="mosaic" value="1"/>
@@ -22,6 +27,14 @@
     <value nick="tight" value="0"/>
     <value nick="normal" value="1"/>
     <value nick="roomy" value="2"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.skylight.window-effect">
+    <value nick="automatic" value="0"/>
+    <value nick="sunrise" value="1"/>
+    <value nick="unfold" value="2"/>
+    <value nick="bloom" value="3"/>
+    <value nick="dissolve" value="4"/>
+    <value nick="none" value="5"/>
   </enum>
 
   <schema id="org.gnome.shell.extensions.skylight" path="/org/gnome/shell/extensions/skylight/">
@@ -55,8 +68,29 @@
       <summary>Show the minimap</summary>
     </key>
     <key name="minimap-in-live-mode" type="b">
-      <default>true</default>
+      <default>false</default>
       <summary>Show the minimap at 1:1, under your windows</summary>
+      <description>Off by default: the minimap pops in only on the canvas, as in Sunlight 0.1.5</description>
+    </key>
+    <key name="window-effect" enum="org.gnome.shell.extensions.skylight.window-effect">
+      <default>'automatic'</default>
+      <summary>How windows open and close on the canvas</summary>
+      <description>Automatic picks per window (Open Here grows from the spot, others sunrise). Reduce Animation in GNOME Settings makes every effect a fade.</description>
+    </key>
+    <key name="dash-enter" type="b">
+      <default>true</default>
+      <summary>Enter apps opened from the dash</summary>
+      <description>On the canvas, clicking a dash icon opens the app in the middle of the view and goes into it at 1:1. Off, the window stays on the canvas. Dragging onto the canvas always places without entering. Running apps are always entered.</description>
+    </key>
+    <key name="canvas-search" enum="org.gnome.shell.extensions.skylight.canvas-search">
+      <default>'both'</default>
+      <summary>What the canvas search bar finds</summary>
+      <description>windows: find windows and frames (Return with none opens Open Here…). apps: an app launcher under the search bar. both: windows first, then apps (default).</description>
+    </key>
+    <key name="canvas-app-grid" type="b">
+      <default>true</default>
+      <summary>Vertical app grid on the canvas</summary>
+      <description>The dash grid button and a second three-finger swipe up open Skylight’s vertical scrolling app grid instead of GNOME’s overview apps view (faster; after gnome-vertical-app-grid). Off uses the overview.</description>
     </key>
     <key name="show-indicator" type="b">
       <default>true</default>
