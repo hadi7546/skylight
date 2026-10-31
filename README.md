@@ -109,7 +109,7 @@ answer a reviewer's questions about it, and will maintain it. The code follows t
 [best practices](https://gitlab.gnome.org/World/javascript/gjs-guide/-/raw/main/docs/extensions/review-guidelines/best-practices.md)
 (no defensive try/catch, no lifecycle flags, small entry point, modules with one job each,
 `enable()` next to `disable()`, timeouts removed next to where they're created). The one exception to
-"target a single GNOME version" is `lib/compat.js`, which keeps the 46–51 differences in one place. EGO
+"target a single GNOME version" is `lib/compat.js`, which keeps the 50–51 differences in one place. EGO
 also wants the uuid's namespace to be a domain or account you control (for example
 `skylight@yourname.github.io`), so change `uuid` in `metadata.json` and the Makefile first.
 
@@ -122,8 +122,7 @@ make install          # copies to ~/.local/share/gnome-shell/extensions
 Log out and back in, then `gnome-extensions enable skylight@hazard7546`. `make pack` builds
 `skylight@hazard7546.shell-extension.zip` for `gnome-extensions install`.
 
-Supports GNOME Shell 45 to 51. Tested end to end on 46 (Ubuntu 24.04) and 51.1 (Arch Linux), both on
-Wayland.
+Supports GNOME Shell 50 and 51, on Wayland. Tested end to end on 51.1 (Arch Linux).
 
 ## How it works
 
@@ -134,9 +133,8 @@ Wayland.
   the same pixel its clone was on, so the hand-over is invisible.
 - **Parking.** Mutter keeps at least 10–75 px of every window on screen, so windows the camera can't see
   are minimised without animation, and restored when the camera comes back.
-- **GNOME versions.** `lib/compat.js` covers cursors (`Clutter.CursorType` in 51), maximisation
-  (`is_maximized()` from 49) and box orientation; the dot grid uses `Clutter.ShaderEffect` on 51, where
-  `Shell.GLSLEffect` is gone.
+- **GNOME versions.** `lib/compat.js` covers cursors (`Clutter.CursorType` in 51, `Meta.Cursor` in 50); the
+  dot grid uses `Clutter.ShaderEffect` on 51, where `Shell.GLSLEffect` is gone.
 - **Input** (`lib/input.js`), **persistence** (`lib/store.js`), the **right-click menu**
   (`lib/canvasMenu.js`), **Open Here…** (`lib/launcher.js`), **One Workspace** (`lib/oneWorkspace.js`),
   the **overview swap** (`lib/overviewSwap.js`) and **frames** (`lib/frames.js`) are separate modules, each
@@ -147,8 +145,7 @@ Wayland.
 ## Limitations
 
 - Only the primary monitor is a canvas; windows on other monitors are left alone.
-- Built for Wayland. On X11 (GNOME 49 and older) gestures on the empty desktop don't reach the shell, so
-  use the shortcuts.
+- Built for Wayland (GNOME 50 and 51 have no X11 session); X11 apps run through Xwayland as usual.
 - Mutter won't move a maximised window. Going into one you haven't moved keeps it maximised (the camera
   lines up with it); once the canvas has it somewhere else (you moved it, Tidy did, or the camera went
   on), it becomes a plain window of the same size, so it never hides and going into it never jumps.
