@@ -79,8 +79,8 @@
     </key>
     <key name="dash-enter" type="b">
       <default>true</default>
-      <summary>Enter apps opened from the dash</summary>
-      <description>On the canvas, clicking a dash icon opens the app in the middle of the view and goes into it at 1:1. Off, the window stays on the canvas. Dragging onto the canvas always places without entering. Running apps are always entered.</description>
+      <summary>Enter apps opened from the canvas</summary>
+      <description>On the canvas, picking an app from the dash, vertical app grid, or search opens it centred in the view and goes into it at 1:1. Off, the new window stays centred on the canvas. Dragging onto the canvas always places without entering. Running apps are always entered centred.</description>
     </key>
     <key name="canvas-search" enum="org.gnome.shell.extensions.skylight.canvas-search">
       <default>'both'</default>
