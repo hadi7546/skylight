@@ -7,7 +7,7 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Hover controls at a window's top-right: minimise and close. */
+/* Hover control at a window's top-right: close (no minimise on the canvas). */
 .skylight-pill {
   background-color: rgba(28, 28, 31, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.12);
