@@ -1,0 +1,133 @@
+# Test, build and release Skylight (experimental: every release is a pre-release).
+#
+# - Every push and pull request: unit tests, lint, schema and metadata checks,
+#   then the extension zip as a build artifact.
+# - Every push to main: the rolling "experimental" pre-release, replaced with
+#   the newest zip.
+# - A pushed tag vX.Y.Z: a versioned pre-release, its version in the zip's
+#   metadata.json.
+
+name: Test, build and release
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install GLib tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libglib2.0-bin
+
+      - name: Unit tests
+        run: make test
+
+      - name: Lint
+        run: make lint
+
+      - name: Settings schema
+        run: glib-compile-schemas --strict --dry-run schemas
+
+      - name: Metadata
+        run: |
+          node -e '
+            const m = JSON.parse(require("fs").readFileSync("metadata.json"));
+            const uuid = require("fs").readFileSync("Makefile", "utf8").match(/^UUID := (.+)$/m)[1];
+            if (m.uuid !== uuid) throw new Error(`metadata uuid ${m.uuid} is not the Makefile UUID ${uuid}`);
+            if (!m["shell-version"]?.length) throw new Error("no shell-version");
+            console.log(`${m.uuid}: GNOME ${m["shell-version"].join(", ")}`);
+          '
+
+  build:
+    needs: test
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install GLib tools and zip
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libglib2.0-bin zip
+
+      - name: Version
+        id: version
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            version="${GITHUB_REF_NAME#v}"
+          else
+            version="$(jq -r '."version-name"' metadata.json)-experimental.${GITHUB_RUN_NUMBER}+${GITHUB_SHA::7}"
+          fi
+          # It ends up in shell commands and metadata.json: plain characters only.
+          if [[ ! "$version" =~ ^[0-9A-Za-z.+-]+$ ]]; then
+            echo "Unsupported version: $version" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Version: $version"
+
+      - name: Build the extension zip
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: make dist VERSION="$VERSION"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skylight-extension
+          path: '*.shell-extension.zip'
+          if-no-files-found: error
+
+  release:
+    needs: build
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    concurrency:
+      group: release-${{ github.ref }}
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      VERSION: ${{ needs.build.outputs.version }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: skylight-extension
+
+      - name: Rolling experimental pre-release
+        if: github.ref == 'refs/heads/main'
+        run: |
+          gh release delete experimental --cleanup-tag --yes || true
+          gh release create experimental ./*.shell-extension.zip \
+            --prerelease \
+            --target "$GITHUB_SHA" \
+            --title "Experimental build $VERSION" \
+            --notes "Experimental: the newest build of main (${GITHUB_SHA::7}), replaced on every push.
+
+          Install: \`gnome-extensions install --force skylight@hazard7546.shell-extension.zip\`, then log out and back in, then \`gnome-extensions enable skylight@hazard7546\`. GNOME Shell 50 and 51, Wayland."
+
+      - name: Versioned pre-release
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          gh release create "$GITHUB_REF_NAME" ./*.shell-extension.zip \
+            --prerelease \
+            --verify-tag \
+            --title "Skylight $VERSION (experimental)" \
+            --generate-notes

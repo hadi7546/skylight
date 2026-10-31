@@ -1,2 +1,4 @@
 schemas/gschemas.compiled
 *.shell-extension.zip
+build/
+node_modules/
