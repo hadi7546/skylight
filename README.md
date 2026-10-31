@@ -28,7 +28,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 | See everything, and back in | three-finger swipe up (down to go back), four-finger tap, Activities, the hot corner | `Super`, `Super`+`Z` |
 | App grid | three-finger swipe up again, or the grid button in the canvas's dash: Skylight’s vertical scrolling grid by default (fast; Settings can use GNOME’s overview instead) | |
 | Open an app here | double-click the empty canvas or desktop, or right-click › Open Here…, or just start typing on the canvas; click a dash icon (opens centred and goes in, unless you turn that off in Settings) or drag one onto empty canvas (opens on that spot) | `Super`+`Return` |
-| Go into a window | click it (it grows to 1:1 around the click), or pinch in over it | |
+| Go into a window | click it (it grows to 1:1 around the click), or pinch out over it | |
 | Bring a window to the middle and go in | double-click it | `Return` over it |
 | Move a window | drag it: edges and centres line up with neighbours (pink guides), then it settles onto the grid. `Ctrl` moves freely, `Shift` takes its snapped group | |
 | Resize a window | drag its edge or corner on the canvas | |
