@@ -7,7 +7,7 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Hover controls at a window's top-right: minimise and close. */
+/* Hover control at a window's top-right: close (no minimise on the canvas). */
 .skylight-pill {
   background-color: rgba(28, 28, 31, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -202,7 +202,7 @@
   border: 1px solid #3584e4;
 }
 
-/* Canvas search as app launcher: results under the search entry. */
+/* Canvas search results: Windows vs Apps sections under the entry. */
 .skylight-search-apps {
   background-color: rgba(28, 28, 31, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -210,6 +210,14 @@
   padding: 6px;
   width: 360px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.skylight-search-section {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 8px 10px 4px 10px;
 }
 
 .skylight-search-app-row {
