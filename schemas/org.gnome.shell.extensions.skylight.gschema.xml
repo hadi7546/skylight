@@ -155,6 +155,10 @@
       <summary>Four-finger swipe pans the canvas from anywhere</summary>
       <description>Three-finger swipes stay GNOME's (overview, dash, workspaces)</description>
     </key>
+    <key name="four-finger-spread" type="b">
+      <default>true</default>
+      <summary>Spreading thumb and three fingers shows the desktop; again brings the windows back</summary>
+    </key>
     <key name="pinch-fingers" type="i">
       <range min="3" max="4"/>
       <default>3</default>

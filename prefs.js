@@ -40,6 +40,7 @@ const gestures = () => [
     [_('Super + scroll'), _('Zoom around the pointer, anywhere')],
     [_('Two-finger scroll or drag on the empty desktop'), _('Pan, with momentum')],
     [_('Four-finger tap'), _('See everything, and back into the window you came from')],
+    [_('Four-finger spread'), _('Show the desktop; again brings the windows back')],
     [_('Four-finger swipe'), _('Pan the canvas from anywhere, over windows too')],
     [_('Click a window on the canvas'), _('Enter it where it is, growing to 1:1 around the click')],
     [_('Double-click or Return over a window'), _('Bring it to the middle and enter it')],
@@ -200,6 +201,8 @@ export default class SkylightPreferences extends ExtensionPreferences {
             _('Super, Activities, the hot corner and a three-finger swipe up show the canvas, with the dash. Search is the spotlight on the canvas')));
         canvas.add(switchRow(settings, 'four-finger-pan', _('Four-finger swipe pans the canvas'),
             _('From anywhere, over windows too. Three-finger swipes stay GNOME’s: the overview and the dash')));
+        canvas.add(switchRow(settings, 'four-finger-spread', _('Four-finger spread shows the desktop'),
+            _('Thumb and three fingers spreading minimise every window; again brings them back')));
         canvas.add(spinRow(settings, 'pinch-fingers', _('Fingers to pinch from anywhere'), 3, 4, 1));
         canvas.add(switchRow(settings, 'show-indicator', _('Top bar menu')));
 
