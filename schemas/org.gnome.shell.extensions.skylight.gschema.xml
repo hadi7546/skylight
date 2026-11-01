@@ -67,6 +67,10 @@
       <default>true</default>
       <summary>Show the minimap</summary>
     </key>
+    <key name="live-zoom" type="b">
+      <default>false</default>
+      <summary>Experimental: Super + scroll zooms the real windows, which stay usable</summary>
+    </key>
     <key name="minimap-in-live-mode" type="b">
       <default>false</default>
       <summary>Show the minimap at 1:1, under your windows</summary>

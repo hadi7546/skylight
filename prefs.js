@@ -147,6 +147,8 @@ export default class SkylightPreferences extends ExtensionPreferences {
         canvas.add(switchRow(settings, 'one-workspace', _('One workspace'),
             _('GNOME’s workspaces are turned off and every window is gathered onto one canvas, so the overview shows everything too. Turning it off brings your workspace settings back')));
         canvas.add(switchRow(settings, 'show-minimap', _('Minimap')));
+        canvas.add(switchRow(settings, 'live-zoom', _('Live zoom (experimental)'),
+            _('Super + scroll zooms the real windows instead of opening the canvas. They stay clickable while zoomed out. Moving and resizing them while zoomed is off by the zoom factor')));
         canvas.add(switchRow(settings, 'minimap-in-live-mode', _('Minimap at 1:1'),
             _('Off by default: the minimap shows on the canvas only. On, it also sits under your windows at 1:1')));
         canvas.add(switchRow(settings, 'remember-canvas', _('Remember the canvas'),
