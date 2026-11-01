@@ -321,3 +321,8 @@
   margin-top: 12px;
   width: 900px;
 }
+
+/* The dim behind the search, like the overview's. */
+.skylight-search-scrim {
+  background-color: rgba(0, 0, 0, 0.45);
+}
