@@ -194,6 +194,8 @@ export default class SkylightPreferences extends ExtensionPreferences {
         canvas.add(switchRow(settings, 'remember-canvas', _('Remember the canvas'),
             _('Windows go back to their spots after you log in again')));
         canvas.add(switchRow(settings, 'place-in-free-space', _('New windows in free space')));
+        canvas.add(spinRow(settings, 'animation-length', _('Animation length'), 0.5, 3, 0.25, 2,
+            _('Opening and closing the canvas, and flights between windows. 1 is quick, higher is slower')));
         canvas.add(switchRow(settings, 'enter-centered', _('Click enters centred'),
             _('A click on a window brings it to the middle of the screen and goes in. Off: it grows to 1:1 around the click, and a double-click centres it')));
         canvas.add(switchRow(settings, 'open-near', _('Open new windows near, never over'),

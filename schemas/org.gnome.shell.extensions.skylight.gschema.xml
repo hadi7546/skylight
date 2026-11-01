@@ -136,6 +136,11 @@
       <default>true</default>
       <summary>Open new windows in free canvas space in view</summary>
     </key>
+    <key name="animation-length" type="d">
+      <range min="0.5" max="3"/>
+      <default>1.5</default>
+      <summary>How long the canvas opening, closing and flights take (1 is the original speed, higher is slower)</summary>
+    </key>
     <key name="enter-centered" type="b">
       <default>true</default>
       <summary>Clicking a window on the canvas brings it to the middle of the screen and goes in (off: it grows around the click)</summary>
