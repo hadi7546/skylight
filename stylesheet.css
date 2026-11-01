@@ -172,7 +172,7 @@
 /* Canvas search results: Windows vs Apps sections under the entry. */
 .skylight-search-apps {
   margin-top: 12px;
-  width: 900px;
+  width: 520px;
 }
 
 .skylight-search-section {
@@ -319,7 +319,7 @@
 /* GNOME's own search results (borrowed SearchResultsView) under the spotlight. */
 .skylight-gnome-results {
   margin-top: 12px;
-  width: 900px;
+  width: 520px;
 }
 
 /* The dim behind the search, like the overview's. */
@@ -329,5 +329,11 @@
 
 /* The search popup: a narrow column in the upper middle, not as wide as the results would make it. */
 .skylight-spotlight {
+  width: 520px;
+}
+
+/* Show Apps: all apps in a vertical list under the entry. */
+.skylight-app-list {
+  margin-top: 12px;
   width: 520px;
 }

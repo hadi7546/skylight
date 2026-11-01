@@ -136,6 +136,10 @@
       <default>true</default>
       <summary>Open new windows in free canvas space in view</summary>
     </key>
+    <key name="enter-centered" type="b">
+      <default>true</default>
+      <summary>Clicking a window on the canvas brings it to the middle of the screen and goes in (off: it grows around the click)</summary>
+    </key>
     <key name="open-near" type="b">
       <default>true</default>
       <summary>New windows open beside the others, never over them: the camera glides to them if they land out of view</summary>
