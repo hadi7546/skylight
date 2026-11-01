@@ -1,7 +1,10 @@
 GNOME_KEYRING_CONTROL=/run/user/1000/keyring
-12:30:19:316 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.codecs-extra/x86_64/25.08-extra is already installed: No such ref 'runtime/org.freedesktop.Platform.codecs-extra/x86_64/25.08-extra' in remote gnome-nightly
-12:30:19:316 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.VAAPI.nvidia/x86_64/25.08 is already installed: No such ref 'runtime/org.freedesktop.Platform.VAAPI.nvidia/x86_64/25.08' in remote gnome-nightly
-12:30:19:316 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.VAAPI.Intel/x86_64/25.08 is already installed: No such ref 'runtime/org.freedesktop.Platform.VAAPI.Intel/x86_64/25.08' in remote gnome-nightly
-12:30:19:316 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.GL.default/x86_64/25.08-extra is already installed: No such ref 'runtime/org.freedesktop.Platform.GL.default/x86_64/25.08-extra' in remote gnome-nightly
-12:30:19:316 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.GL.default/x86_64/25.08 is already installed: No such ref 'runtime/org.freedesktop.Platform.GL.default/x86_64/25.08' in remote gnome-nightly
-12:33:54:002 Gdk Lost connection to Wayland compositor.
+Use playbin3
+Enable ReplayGain: true
+Audio Sink: pulsesink
+Find 0 files in 0 folders in 0 ms
+Load 2320 musics in 672 ms
+Group 219 artists 542 albums 1 playlists in 12 ms
+Find 2320 files in 175 folders in 34 ms
+Load 2320 musics in 8 ms
+Group 219 artists 542 albums 1 playlists in 5 ms
