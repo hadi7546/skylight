@@ -105,6 +105,35 @@ function acceleratorLabel(accels) {
 }
 
 export default class SkylightPreferences extends ExtensionPreferences {
+    _pictureRow(window, settings) {
+        const row = new Adw.ActionRow({title: _('Picture file')});
+        const show = () => {
+            row.subtitle = settings.get_string('background-image') || _('None chosen');
+        };
+        show();
+        const button = new Gtk.Button({label: _('Choose…'), valign: Gtk.Align.CENTER});
+        button.connect('clicked', () => {
+            const dialog = new Gtk.FileDialog({title: _('Background picture')});
+            const filter = new Gtk.FileFilter({name: _('Images')});
+            filter.add_pixbuf_formats();
+            const filters = new Gio.ListStore({item_type: Gtk.FileFilter});
+            filters.append(filter);
+            dialog.set_filters(filters);
+            dialog.open(window, null, (d, result) => {
+                try {
+                    const file = d.open_finish(result);
+                    settings.set_string('background-image', file.get_path());
+                    settings.set_string('background', 'image');
+                } catch {
+                    // Cancelled.
+                }
+            });
+        });
+        row.add_suffix(button);
+        settings.connect('changed::background-image', show);
+        return row;
+    }
+
     fillPreferencesWindow(window) {
         const settings = this.getSettings();
         window._settings = settings;
@@ -118,7 +147,17 @@ export default class SkylightPreferences extends ExtensionPreferences {
             ['wallpaper', _('Wallpaper')],
             ['grid', _('Dot grid')],
             ['colour', _('Colour')],
+            ['image', _('Picture')],
+            ['gradient', _('Gradient')],
         ]));
+        background.add(this._pictureRow(window, settings));
+        background.add(choiceRow(settings, 'gradient-direction', _('Gradient direction'), [
+            ['vertical', _('Top to bottom')],
+            ['horizontal', _('Left to right')],
+            ['radial', _('From the middle')],
+        ]));
+        background.add(entryRow(settings, 'gradient-start', _('Gradient: first colour')));
+        background.add(entryRow(settings, 'gradient-end', _('Gradient: second colour')));
         background.add(switchRow(settings, 'blur-on-zoom', _('Blur and dim as you zoom out'),
             _('Sharp at 100%, soft by 50%, so the overview is about the windows')));
         background.add(entryRow(settings, 'canvas-color', _('Canvas colour')));

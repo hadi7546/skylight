@@ -4,6 +4,13 @@
     <value nick="wallpaper" value="0"/>
     <value nick="grid" value="1"/>
     <value nick="colour" value="2"/>
+    <value nick="image" value="3"/>
+    <value nick="gradient" value="4"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.skylight.gradient-direction">
+    <value nick="vertical" value="0"/>
+    <value nick="horizontal" value="1"/>
+    <value nick="radial" value="2"/>
   </enum>
   <enum id="org.gnome.shell.extensions.skylight.launcher">
     <value nick="gnome" value="0"/>
@@ -43,7 +50,7 @@
     <key name="background" enum="org.gnome.shell.extensions.skylight.background">
       <default>'wallpaper'</default>
       <summary>What sits behind the windows on the canvas</summary>
-      <description>wallpaper: your wallpaper, blurring and dimming as you zoom out. grid: a colour with a dot grid that pans and zooms with the canvas. colour: just the colour.</description>
+      <description>wallpaper: your wallpaper, blurring and dimming as you zoom out. image: a picture file, treated the same. gradient: two colours, treated the same. grid: a colour with a dot grid that pans and zooms with the canvas. colour: just the colour.</description>
     </key>
     <key name="blur-on-zoom" type="b">
       <default>true</default>
@@ -56,6 +63,22 @@
     <key name="dot-color" type="s">
       <default>'rgba(0,0,0,0.16)'</default>
       <summary>Colour of the background dots</summary>
+    </key>
+    <key name="background-image" type="s">
+      <default>''</default>
+      <summary>Picture file used when the background is Image</summary>
+    </key>
+    <key name="gradient-start" type="s">
+      <default>'#3a6ea5'</default>
+      <summary>First colour of the gradient background</summary>
+    </key>
+    <key name="gradient-end" type="s">
+      <default>'#c9a0dc'</default>
+      <summary>Second colour of the gradient background</summary>
+    </key>
+    <key name="gradient-direction" enum="org.gnome.shell.extensions.skylight.gradient-direction">
+      <default>'vertical'</default>
+      <summary>Direction of the gradient background</summary>
     </key>
     <key name="show-grid" type="b">
       <default>true</default>
