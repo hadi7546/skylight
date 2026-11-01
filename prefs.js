@@ -194,6 +194,8 @@ export default class SkylightPreferences extends ExtensionPreferences {
         canvas.add(switchRow(settings, 'remember-canvas', _('Remember the canvas'),
             _('Windows go back to their spots after you log in again')));
         canvas.add(switchRow(settings, 'place-in-free-space', _('New windows in free space')));
+        canvas.add(switchRow(settings, 'open-near', _('Open new windows near, never over'),
+            _('With no room in view, a new window goes beside the others and the camera glides to it, instead of opening on top of them')));
         canvas.add(switchRow(settings, 'follow-focus', _('Follow focus'),
             _('Glide to a window that gets focus while partly off screen')));
         canvas.add(spinRow(settings, 'scroll-speed', _('Panning speed'), 0.25, 4, 0.25, 2));

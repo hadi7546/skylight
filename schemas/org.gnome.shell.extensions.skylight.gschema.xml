@@ -136,6 +136,10 @@
       <default>true</default>
       <summary>Open new windows in free canvas space in view</summary>
     </key>
+    <key name="open-near" type="b">
+      <default>true</default>
+      <summary>New windows open beside the others, never over them: the camera glides to them if they land out of view</summary>
+    </key>
     <key name="follow-focus" type="b">
       <default>true</default>
       <summary>Glide to windows that get focus while partly off screen</summary>
