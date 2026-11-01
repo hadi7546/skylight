@@ -326,3 +326,8 @@
 .skylight-search-scrim {
   background-color: rgba(0, 0, 0, 0.45);
 }
+
+/* The search popup: a narrow column in the upper middle, not as wide as the results would make it. */
+.skylight-spotlight {
+  width: 520px;
+}
