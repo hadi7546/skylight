@@ -169,48 +169,10 @@
   padding: 12px 12px 4px 12px;
 }
 
-/* Spotlight: a floating search in the view, not a top-bar menu. */
-.skylight-search,
-.skylight-search:hover {
-  background-color: rgba(28, 28, 31, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 22px;
-  color: rgba(255, 255, 255, 0.92);
-  caret-color: rgba(255, 255, 255, 0.92);
-  selection-background-color: rgba(53, 132, 228, 0.6);
-  font-size: 16px;
-  padding: 12px 20px;
-  width: 480px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-}
-
-.skylight-dash-slot {
-  padding-bottom: 12px;
-}
-
-/* The canvas's search: the match Return goes into. */
-.skylight-match-ring {
-  border: 3px solid #3584e4;
-  border-radius: 10px;
-}
-
-.skylight-search StLabel.hint-text {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.skylight-search:focus {
-  border: 1px solid #3584e4;
-}
-
 /* Canvas search results: Windows vs Apps sections under the entry. */
 .skylight-search-apps {
-  background-color: rgba(28, 28, 31, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  padding: 6px;
-  margin-top: 8px;
-  width: 480px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  margin-top: 12px;
+  width: 900px;
 }
 
 .skylight-search-section {
@@ -352,4 +314,10 @@
   padding: 2px 6px;
   min-width: 160px;
   box-shadow: none;
+}
+
+/* GNOME's own search results (borrowed SearchResultsView) under the spotlight. */
+.skylight-gnome-results {
+  margin-top: 12px;
+  width: 900px;
 }

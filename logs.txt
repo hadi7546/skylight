@@ -1,0 +1,6 @@
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+11:34:10:006 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.codecs-extra/x86_64/25.08-extra is already installed: No such ref 'runtime/org.freedesktop.Platform.codecs-extra/x86_64/25.08-extra' in remote gnome-nightly
+11:34:10:006 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.VAAPI.nvidia/x86_64/25.08 is already installed: No such ref 'runtime/org.freedesktop.Platform.VAAPI.nvidia/x86_64/25.08' in remote gnome-nightly
+11:34:10:006 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.VAAPI.Intel/x86_64/25.08 is already installed: No such ref 'runtime/org.freedesktop.Platform.VAAPI.Intel/x86_64/25.08' in remote gnome-nightly
+11:34:10:006 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.GL.default/x86_64/25.08-extra is already installed: No such ref 'runtime/org.freedesktop.Platform.GL.default/x86_64/25.08-extra' in remote gnome-nightly
+11:34:10:006 flatpak Warning: Treating remote fetch error as non-fatal since runtime/org.freedesktop.Platform.GL.default/x86_64/25.08 is already installed: No such ref 'runtime/org.freedesktop.Platform.GL.default/x86_64/25.08' in remote gnome-nightly
