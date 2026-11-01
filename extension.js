@@ -1,6 +1,5 @@
 // Skylight: an infinite-canvas window manager for GNOME Shell.
 
-import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import St from 'gi://St';
 
@@ -39,8 +38,6 @@ class Indicator extends PanelMenu.Button {
             item.connect('activate', callback);
             this.menu.addMenuItem(item);
         };
-        add(_('Open App…'), () => controller.openHere());
-        add(_('See Everything'), () => controller.fitAll());
         add(_('Tidy'), () => controller.tidy());
         for (const [key, label] of [
             ['strip-mode', _('Strip Mode')],
@@ -59,16 +56,6 @@ class Indicator extends PanelMenu.Button {
         });
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
         add(_('Settings'), () => this._extension.openPreferences());
-        this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-        add(_('Disable'), () => {
-            const uuid = this._extension.uuid;
-            this.menu.close();
-            // disable() destroys this menu, so run it after the close.
-            GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
-                Main.extensionManager.disableExtension(uuid);
-                return GLib.SOURCE_REMOVE;
-            });
-        });
     }
 });
 
