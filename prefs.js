@@ -185,6 +185,8 @@ export default class SkylightPreferences extends ExtensionPreferences {
             _('Every window on one horizontal strip, a column per app, the app used last on the left. Off again, every window goes back')));
         canvas.add(switchRow(settings, 'one-workspace', _('One workspace'),
             _('GNOME’s workspaces are turned off and every window is gathered onto one canvas, so the overview shows everything too. Turning it off brings your workspace settings back')));
+        canvas.add(switchRow(settings, 'snap-to-full-screen', _('Snap to full screen windows'),
+            _('A pan, pinch or minimap jump that comes to rest almost on a maximised window nudges onto it and goes in')));
         canvas.add(switchRow(settings, 'show-minimap', _('Minimap')));
         canvas.add(switchRow(settings, 'minimap-in-live-mode', _('Minimap at 1:1'),
             _('Off by default: the minimap shows on the canvas only. On, it also sits under your windows at 1:1')));

@@ -86,6 +86,10 @@
     </key>
 
     <!-- Canvas -->
+    <key name="snap-to-full-screen" type="b">
+      <default>true</default>
+      <summary>Snap onto a full screen window a gesture comes to rest almost on</summary>
+    </key>
     <key name="show-minimap" type="b">
       <default>true</default>
       <summary>Show the minimap</summary>
