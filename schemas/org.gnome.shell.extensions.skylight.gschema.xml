@@ -259,6 +259,10 @@
       <default><![CDATA[['<Super>z']]]></default>
       <summary>See everything, and back into the window you came from</summary>
     </key>
+    <key name="picture-in-picture" type="as">
+      <default><![CDATA[['<Control><Alt>p']]]></default>
+      <summary>Picture in picture: the window becomes a small tile in a corner, and back</summary>
+    </key>
     <key name="zoom-in" type="as">
       <default><![CDATA[['<Super>equal']]]></default>
       <summary>Zoom in</summary>

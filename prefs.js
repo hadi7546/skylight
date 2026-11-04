@@ -7,6 +7,7 @@ import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Ex
 // Functions, not constants: gettext is only usable once the extension object exists.
 const shortcuts = () => [
     ['toggle-canvas', _('See everything / back into the window you came from')],
+    ['picture-in-picture', _('Picture in picture: the window as a small tile in a corner, and back')],
     ['zoom-out', _('Zoom out')],
     ['zoom-in', _('Zoom in')],
     ['zoom-reset', _('Zoom to 1:1')],

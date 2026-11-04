@@ -23,6 +23,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 
 | To | Trackpad / mouse | Keys |
 |---|---|---|
+| Picture in picture | right-click a window › Picture in Picture; on the tile: drag its top bar to a corner (a fling goes where it's heading), drag the corner grip to resize, the home button sends it back, click it over the canvas to go into it | `Ctrl`+`Alt`+`P` (the window under the pointer on the canvas, else the focused one; again to bring it back) |
 | Jump to a window | | hold `Super`, point at a window, let go to go into it (a tap is unchanged) |
 | Zoom | pinch (two fingers on the desktop or canvas, three anywhere) | `Super` + scroll, anywhere |
 | Pan | four-finger swipe anywhere, over windows too; two-finger scroll or drag on the empty desktop or canvas | arrows on the canvas |

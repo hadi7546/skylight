@@ -314,3 +314,32 @@ test('frames: around windows with padding, and which windows a frame carries', (
     // Its middle outside: left where it is.
     assert.ok(!G.insideFrame(f, {x: 900, y: 500, w: 200, h: 200}));
 });
+
+test('pipCorners puts a tile in each corner with the margin', () => {
+    const c = G.pipCorners({x: 0, y: 32, w: 1600, h: 968}, 300, 200, 16);
+    assert.deepEqual(c.tl, [16, 48]);
+    assert.deepEqual(c.br, [1284, 784]);
+    assert.deepEqual(c.tr, [1284, 48]);
+    assert.deepEqual(c.bl, [16, 784]);
+});
+
+test('nearestPipCorner follows the drop, the fling and the corners taken', () => {
+    const area = {x: 0, y: 32, w: 1600, h: 968};
+    assert.equal(G.nearestPipCorner(area, 300, 200, 1000, 600), 'br');
+    assert.equal(G.nearestPipCorner(area, 300, 200, 200, 100), 'tl');
+    // Dropped in the middle but flung to the left: the left corner.
+    assert.equal(G.nearestPipCorner(area, 300, 200, 700, 100, -3, 0), 'tl');
+    // The nearest corner is taken: the next nearest.
+    assert.equal(G.nearestPipCorner(area, 300, 200, 1280, 780, 0, 0, ['br']), 'tr');
+    // All taken: the nearest anyway.
+    assert.equal(G.nearestPipCorner(area, 300, 200, 1280, 780, 0, 0, ['tl', 'tr', 'bl', 'br']), 'br');
+});
+
+test('pip scale: about 360 wide, bounded, and resizing keeps the aspect', () => {
+    const area = {x: 0, y: 32, w: 1600, h: 968};
+    assert.ok(close(G.pipScaleFor(720, 400, area), 0.5));
+    assert.equal(G.pipScaleFor(4000, 3000, area), G.PIP_MIN_SCALE);
+    assert.equal(G.pipScaleFor(200, 100, area), G.PIP_MAX_SCALE);
+    assert.ok(close(G.pipResizedScale(0.3, 1000, 600, 100, 5), 0.4));
+    assert.equal(G.pipResizedScale(0.3, 1000, 600, 100000, 0), G.PIP_MAX_SCALE);
+});
