@@ -1,4 +1,4 @@
-// Run with: make test. After Sunlight's StripTests.swift.
+// Run with: make test.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 

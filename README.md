@@ -2,18 +2,12 @@
 
 [![Test, build and release](https://github.com/hadi7546/skylight/actions/workflows/ci.yml/badge.svg)](https://github.com/hadi7546/skylight/actions/workflows/ci.yml)
 
-[Sunlight](https://github.com/spacefarm-digital/sunlight) for GNOME: every window on one infinite
-canvas. Zoom out to see all of it. Click a window and you're in it, for real, at 1:1.
+Every window on one infinite canvas, for GNOME Shell. Zoom out to see all of it. Click a window and
+you're in it, for real, at 1:1.
 
 Windows keep their real size on an endless canvas and your screen is a camera looking at it. Zooming
 never resizes anything, so nothing reflows. At 1:1 it is simply your GNOME desktop: real windows,
 fully interactive.
-
-Behaviour follows Sunlight's [design notes](https://github.com/spacefarm-digital/sunlight/blob/main/docs/how-it-works.md):
-the camera path and spring, the alignment guides and drop grid, edge resizing, Move & Resize, Tidy and
-new-window placement are ports of its pure Swift modules (MIT, see `LICENSE-sunlight`). Snapping groups
-come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Tidy style from
-[Mosaic](https://github.com/DEM0NAssissan7/mosaic).
 
 ![Zooming out, lining a window up, tidying, and clicking back in](screenshots/demo.gif)
 
@@ -48,7 +42,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 
 Everything else is in the sun icon in the top bar, and in Settings (`gnome-extensions prefs skylight@hadi7546`).
 
-### What's the same as Sunlight
+### How it behaves
 
 - Entering a window keeps the clicked spot under the pointer and the title bar below the top bar; a
   double-click brings it to the middle instead. Pinching in to 90% over a window enters it.
@@ -102,7 +96,7 @@ Everything else is in the sun icon in the top bar, and in Settings (`gnome-exten
   The minimap pops in on the canvas only by default (turn on “Minimap at 1:1” for the live-mode
   minimap).
 - Sideways three-finger swipes stay GNOME's (workspaces); four fingers are Skylight's:
-  a swipe pans from anywhere, as Sunlight's four-finger drag does, and a tap shows everything. On GNOME 51,
+  a swipe pans from anywhere, and a tap shows everything. On GNOME 51,
   which takes swipes of three fingers or more, Skylight takes four-finger ones first (an event filter).
 - `Esc` on the canvas goes back into the window you came from (on the Mac it does nothing).
 - The shortcuts avoid GNOME's own: `Ctrl`+`Alt`+arrows switch workspaces in GNOME, so halves are
@@ -160,7 +154,7 @@ Supports GNOME Shell 50 and 51, on Wayland. Tested end to end on 51.1 (Arch Linu
   (`lib/canvasMenu.js`), **Open Here…** (`lib/launcher.js`), **One Workspace** (`lib/oneWorkspace.js`),
   the **overview swap** (`lib/overviewSwap.js`) and **frames** (`lib/frames.js`) are separate modules, each
   cleaning up its own timeouts and signals.
-- **Geometry** (`lib/geometry.js`), **strip mode**'s layout (`lib/strip.js`, after Sunlight's `Strip.swift`)
+- **Geometry** (`lib/geometry.js`), **strip mode**'s layout (`lib/strip.js`)
   and **matching** for search (`lib/appMatch.js`) are pure JavaScript with unit tests: `make test`.
 
 ## Limitations
@@ -172,3 +166,11 @@ Supports GNOME Shell 50 and 51, on Wayland. Tested end to end on 51.1 (Arch Linu
   on), it becomes a plain window of the same size, so it never hides and going into it never jumps.
 - Fullscreen windows are left where they are.
 - Layouts can reopen an app's window, but not a particular document or tab.
+
+## Credits
+
+Much of the canvas behaviour (the camera path and spring, alignment guides and drop grid, edge resizing,
+Move & Resize, Tidy and new-window placement) is ported from the pure modules of
+[Sunlight](https://github.com/spacefarm-digital/sunlight) (MIT, see `LICENSE-sunlight`). Snapping groups
+come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Tidy style from
+[Mosaic](https://github.com/DEM0NAssissan7/mosaic).

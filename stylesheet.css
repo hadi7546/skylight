@@ -1,4 +1,4 @@
-/* Skylight. Colours follow Sunlight's Chrome.swift. */
+/* Skylight. */
 
 .skylight-label {
   color: rgba(255, 255, 255, 0.92);
@@ -28,7 +28,7 @@
   color: rgba(255, 255, 255, 0.92);
 }
 
-/* Alignment guides while dragging (Sunlight's pink). */
+/* Alignment guides while dragging (pink). */
 .skylight-guide {
   background-color: #ff529e;
 }
@@ -109,7 +109,7 @@
   icon-size: 12px;
 }
 
-/* Open Here…: the bar (Sunlight's OpenHerePanel). */
+/* Open Here…: the bar. */
 .skylight-launcher {
   background-color: rgba(28, 28, 31, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.08);

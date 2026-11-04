@@ -97,7 +97,7 @@
     <key name="minimap-in-live-mode" type="b">
       <default>false</default>
       <summary>Show the minimap at 1:1, under your windows</summary>
-      <description>Off by default: the minimap pops in only on the canvas, as in Sunlight 0.1.5</description>
+      <description>Off by default: the minimap pops in only on the canvas</description>
     </key>
     <key name="window-effect" enum="org.gnome.shell.extensions.skylight.window-effect">
       <default>'automatic'</default>
