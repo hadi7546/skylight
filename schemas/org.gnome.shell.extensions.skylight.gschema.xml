@@ -163,6 +163,11 @@
       <summary>The canvas in place of the overview</summary>
       <description>Super, the Activities button, the hot corner and a three-finger swipe up show the canvas, with the dash. Search is the spotlight on the canvas. The dash grid button opens Skylight's app grid.</description>
     </key>
+    <key name="hold-super" type="b">
+      <default>true</default>
+      <summary>Hold Super to jump to a window</summary>
+      <description>Held for a moment, Super shows everything on the canvas; letting go enters the window under the pointer. A tap is unchanged.</description>
+    </key>
     <key name="four-finger-pan" type="b">
       <default>true</default>
       <summary>Four-finger swipe pans the canvas from anywhere</summary>

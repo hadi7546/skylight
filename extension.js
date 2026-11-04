@@ -10,6 +10,7 @@ import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 
 import {Controller} from './lib/controller.js';
 import {OneWorkspace} from './lib/oneWorkspace.js';
+import {HoldSuper} from './lib/holdSuper.js';
 import {OverviewSwap} from './lib/overviewSwap.js';
 
 const Indicator = GObject.registerClass(
@@ -66,7 +67,9 @@ export default class SkylightExtension extends Extension {
         this._controller.enable();
         this._oneWorkspace = new OneWorkspace(this._settings, this._controller);
         this._oneWorkspace.enable();
-        this._overviewSwap = new OverviewSwap(this._settings, this._controller);
+        this._holdSuper = new HoldSuper(this._settings, this._controller);
+        this._holdSuper.enable();
+        this._overviewSwap = new OverviewSwap(this._settings, this._controller, this._holdSuper);
         this._overviewSwap.enable();
 
         this._settings.connectObject('changed::show-indicator', () => this._syncIndicator(), this);
@@ -79,6 +82,8 @@ export default class SkylightExtension extends Extension {
         this._indicator = null;
         this._overviewSwap.disable();
         this._overviewSwap = null;
+        this._holdSuper.disable();
+        this._holdSuper = null;
         this._oneWorkspace.disable();
         this._oneWorkspace = null;
         this._controller.disable();

@@ -205,6 +205,8 @@ export default class SkylightPreferences extends ExtensionPreferences {
         canvas.add(spinRow(settings, 'scroll-speed', _('Panning speed'), 0.25, 4, 0.25, 2));
         canvas.add(switchRow(settings, 'replace-overview', _('The canvas in place of the overview'),
             _('Super, Activities, the hot corner and a three-finger swipe up show the canvas, with the dash. Search is the spotlight on the canvas')));
+        canvas.add(switchRow(settings, 'hold-super', _('Hold Super to jump to a window'),
+            _('Held for a moment, Super shows everything; point at a window and let go to go into it. A tap, and Super with another key, are unchanged')));
         canvas.add(switchRow(settings, 'four-finger-pan', _('Four-finger swipe pans the canvas'),
             _('From anywhere, over windows too. Three-finger swipes stay GNOME’s: the overview and the dash')));
         canvas.add(switchRow(settings, 'four-finger-spread', _('Four-finger spread shows the desktop'),

@@ -23,6 +23,7 @@ come from [driftwm](https://github.com/malbiruk/driftwm), and the alternative Ti
 
 | To | Trackpad / mouse | Keys |
 |---|---|---|
+| Jump to a window | | hold `Super`, point at a window, let go to go into it (a tap is unchanged) |
 | Zoom | pinch (two fingers on the desktop or canvas, three anywhere) | `Super` + scroll, anywhere |
 | Pan | four-finger swipe anywhere, over windows too; two-finger scroll or drag on the empty desktop or canvas | arrows on the canvas |
 | See everything, and back in | three-finger swipe up (down to go back), four-finger tap, Activities, the hot corner | `Super`, `Super`+`Z` |
